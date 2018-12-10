@@ -1,0 +1,25 @@
+$backgroundColor:#444;
+$titleColor: #FC6866;
+.formStyle {
+  background: $backgroundColor;
+  border-radius: 10px;
+  color: #fff;
+  border: 2px solid #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+   .text-error{
+    color: #ff7777ff !important;
+    text-align: left;
+   }
+   .title-text{
+    color: $titleColor;
+    font-weight: bold;
+    font-size: 20px;
+   }
+   .button{
+     color: $titleColor;
+   }
+
+}

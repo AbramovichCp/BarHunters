@@ -1,0 +1,136 @@
+@import '../../../common/variable.scss';
+@import '../../../common/mixin.scss';
+
+* {
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.page-wrapper {
+  background: linear-gradient(rgba(33, 33, 33, .3), rgba(0, 0, 0, 0.8)), url(../../../assets/all-events-background.jpg);
+  @include image-in-block();
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 80px 0 20px 0;
+
+  .container {
+    @media (min-width: 1200px) {
+      max-width: 90vw;
+      margin: 0 auto;
+    }
+  }
+}
+
+.main-title {
+  text-align: center;
+  @include title-main($white, #ccc);
+  font-size: 4rem;
+  @media (max-width: 572px) {
+    font-size: 2.5rem;
+  }
+}
+
+.no-result {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.year {
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 0 0 6px #000000;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+  padding-left: 5px;
+}
+
+.all-events-deck {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  position: relative;
+  color: $white;
+  @include image-in-block();
+  height: 300px;
+  width: 300px;
+  margin: 0 5px 5px 0;
+  text-shadow: 0 0 6px #000000;
+  background-color: transparent;
+  border: none;
+  background-position:0, 0, 0;
+  -webkit-transition: all .7s;
+  -moz-transition: all .7s, background-position 0s;
+  -ms-transition: all .7s;
+  transition: all .7s, background-position 0s;
+  &:hover {
+    box-shadow: $shadow-box;
+    z-index: 2;
+    cursor: pointer;
+    background-position:0, 300px, 0;
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  .card-title {
+    font-size: 1.5rem;
+  }
+  .bar-name {
+    font-size: 1.5rem;
+    margin: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.button-row {
+  position: relative;
+  @include flex-block(row, center, flex-start);
+}
+.btn-load-more {
+  @include flex-block(row, center, baseline);
+  margin: 15px 0;
+  background-color: $btn-color;
+  box-shadow: $shadow-box;
+  &:hover {
+    background-color: #b93b39;
+  }
+}
+
+.btn-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: transparent;
+  border-radius: 50%;
+  font-size: 2rem;
+  &:hover {
+    cursor: pointer;
+    font-size: 2.2rem;
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+.btn-back {
+  @include flex-block(row, center, baseline);
+  margin: 15px 0;
+  background-color: $btn-color;
+  box-shadow: $shadow-box;
+  &:hover {
+    background-color: #b93b39;
+  }
+}

@@ -1,0 +1,54 @@
+<div class='admin-panel'>
+    <div class="container-fluid">
+        <div class="row main">
+            <div class="side-menu col-12 col-sm-4 col-lg-3">
+                <div class="row">
+                    <div class="col-12 side-menu__element" (click)="showForm('addEventForm')">
+                        <span>{{'adminPanel.menu.addNewEven' | translate}}</span>
+                    </div>
+                    <div class="col-12 side-menu__element" (click)="showForm('addPlaceForm')">
+                        <span>{{'adminPanel.menu.addNewPlace' | translate}}</span>
+                    </div>
+                    <div class="col-12 side-menu__element" (click)="showForm('addManagerForm')">
+                        <span>{{'adminPanel.menu.addNewManagers' | translate}}</span>
+                    </div>
+                    <div class="col-12 side-menu__element" (click)="showForm('chanceEventForm')">
+                        <span>{{'adminPanel.menu.changeEvent' | translate}}</span>
+                    </div>
+                    <div class="col-12 side-menu__element" (click)="showForm('deleteEvent')">
+                        <span>{{'adminPanel.menu.deleteEvent' | translate}}</span>
+                    </div>
+                    <div class="col-12 side-menu__element" (click)="showForm('deletePlace')">
+                        <span>{{'adminPanel.menu.deletePlace' | translate}}</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="content col-xs-9 col-sm-8 col-md-8 col-lg-9 col-xl-9 ">
+                <div class="row " [ngSwitch]="currentForm">
+                    <div class="col-12 col-sm-8  col-lg-10 row  offset-1 offset-sm-2 form-wrapper" *ngSwitchCase="'addPlaceForm'">
+                        <app-add-places></app-add-places>
+                    </div>
+                    <div class="col-12 col-sm-8  row   offset-1  offset-sm-2" *ngSwitchCase="'addManagerForm'">
+                        <app-add-manager class="addManager"></app-add-manager>
+                    </div>
+                    <div class="col-12 col-sm-8   offset-1  offset-sm-2" *ngSwitchCase="'addEventForm'">
+                        <app-add-event></app-add-event>
+                    </div>
+                    <div class="col-12 col-sm-8 doube-form   offset-1 offset-sm-2" *ngSwitchCase="'chanceEventForm'">
+                        <app-event-list-edit [hidden]="!isViewableEventList"></app-event-list-edit>
+                        <app-edit-event *ngIf='isViewable' [@enterAnimation]></app-edit-event>
+                    </div>
+                    <div class="col-12 col-sm-8   offset-1 offset-sm-2" *ngSwitchCase="'deleteEvent'">
+                        <app-delete-event></app-delete-event>
+                    </div>
+                    <div class="col-10 col-sm-8 offset-1 offset-sm-2" *ngSwitchCase="'deletePlace'">
+                        <app-delete-place></app-delete-place>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

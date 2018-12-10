@@ -1,0 +1,30 @@
+<form class="col-md-12 eventsLists  formStyle">
+    <span class="title">{{'eventListEdit.eventListEditTittle' | translate}}</span>
+
+    <ng-select 
+        (change)="onChangeSelectedForSearch ($event)" 
+        [items]="placesArray"
+        bindLabel="place_name"
+        bindValue="place_id"
+        placeholder="{{'eventListEdit.placeholder.selectPlace' | translate}}"
+        [(ngModel)]="selectedPlaceForSearch"
+        [ngModelOptions]="{standalone: true}"
+        class="common"
+        name='location'
+        ngModel
+        #eventPlace="ngModel"
+        required
+    >
+    </ng-select>
+
+
+    <div class="listContainer">
+        <div *ngFor="let event of events" class="event">
+            <div class="name" (click)="goToEditForm(event)">
+                {{event.event_title}}
+            </div>
+        </div>
+
+        <app-edit-event *ngIf='isViewable' [@enterAnimation]></app-edit-event>
+    </div>
+</form>

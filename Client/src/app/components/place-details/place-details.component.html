@@ -1,0 +1,35 @@
+<div class="row modal-container">
+    <div id="img-place" class="col-md-7 image-container visible-xs-block" (click)=hideEventDetails() 
+        [class.image-hover]="status === false"
+        [ngStyle]="{'background-image': 'url('+data.place_photo+')'}">
+            <div class="image-fade"></div>
+            <h3 class="place-name">{{ data.place_name }}</h3>
+            <span class="address-bar">{{ data.place_address }}</span>
+    </div>
+    <div class="col-md-5 content-container" [ngClass]="status ? 'hide-event' : 'show-event'">
+        <p class="event-count">{{ eventCount }} events</p>
+        <span id="btn-hide" class="arrow" 
+            [class.visible]="status === false" 
+            (click)=hideEventDetails() ></span>
+            <button type='button' 
+                class='close pull-right' 
+                aria-label='Close' 
+                (click)=modalRef.hide()>
+                <span id="btn-close" class="cross" aria-hidden='true'></span>
+            </button>
+        <perfect-scrollbar [config]="config" class="scrollbar">
+            <div class="event-container" 
+                *ngFor="let event of events; let i = index" 
+                id="{{event.event_id}}" 
+                (click)='showEventDetails(event.event_id, i)' 
+                [class.active-event]="selectedIndex === i">
+                <div class="event-block">
+                    <h4 class="event-title">{{ event.event_title }}</h4>
+                    <span class="event-date">{{ event.event_date | localizeEventsDates | uppercase }}</span>
+                </div>
+            </div>
+        </perfect-scrollbar>
+    </div>
+    <div class="col-md-5 event-details" [innerHTML]="hiddenData">
+    </div>
+</div>

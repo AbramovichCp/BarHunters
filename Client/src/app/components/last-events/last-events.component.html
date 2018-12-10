@@ -1,0 +1,27 @@
+<div class="last-events-container">
+    <h2 class="title-categories">upcoming&nbsp;events</h2>
+    <div class="slider">
+        <div class="btn-prev"><span></span></div>
+        <ngx-slick class="row carousel" #slickModal="slick-modal" [config]="slideConfigLastEvents">
+            <div class="last-event-slider-item" ngxSlickItem *ngFor="let event of eventsList; let i = index">
+                <div *ngIf="event.event_type === 'all-events'" routerLink="/BarsHunters/all-events" class="last-event-card btn-to-events">
+                    <h3 class="btn-caption">{{'lastEvents.buttonAllEvents' | translate}}</h3>
+                </div>
+                <div *ngIf="event.event_type !== 'all-events'" class="last-event-card" [ngStyle]="{
+            'background-image': 'linear-gradient(225deg, rgba(179, 42, 12, .4), rgba(0, 0, 0, 0.6) ),
+                                url(' + event.event_poster + ')'}">
+                    <h3 class="event-caption">{{ event.event_title }}</h3>
+                    <app-btn-details (click)="eventDetails(event.event_id)"></app-btn-details>
+                    <div class="last-event-info">
+                        <h4 class="bar-name">{{ event.place_id[0].place_name }}</h4>
+                        <span class="bar-address">{{
+              event.place_id[0].place_address
+              }}</span><br />
+                        <span class="event-date">{{ event.event_date  | localizeEventsDates | uppercase }}</span>
+                    </div>
+                </div>
+            </div>
+        </ngx-slick>
+        <div class="btn-next"><span></span></div>
+    </div>
+</div>

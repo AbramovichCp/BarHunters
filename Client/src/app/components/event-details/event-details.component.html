@@ -1,0 +1,26 @@
+<div class="modal-event">
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span class="cross" aria-hidden="true"></span>
+      </button>
+    <div class="modal-header">
+        <div class="modal-title pull-left">{{ data.event_title }}</div>
+    </div>
+    <div class="modal-body">
+        <div class="modal-event-date">{{ data.event_date | localizeEventsDates | uppercase}}</div>
+        <img class="modal-event-poster" src="{{data.event_poster}}" alt="{{data.event_title}}" />
+        <div class="modal-description-of-event">{{ data.event_about }}</div>
+        <div class="modal-event-artists" *ngIf="data.artists.length">
+            <div class="modal-artists-title row">Artists
+                <div class="artist-list" *ngFor="let artist of data.artists">
+                    <a class="artist-name" href="{{artist.artist_about}}" title="{{'eventDetails.evntTitleLinkTo' | translate}} {{artist.artist_name}} {{'eventDetails.eventTitleWeb' | translate}}" target="_blank">{{ artist.artist_name }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button id="button-for-registration" type="button" class="btn modal-button-registration" (click)="registerOnEvent(data.event_id)" (click)="modalRef.hide()">
+      {{ 'eventDetails.register' | translate }}
+    </button>
+        <div class="if-user-registered"></div>
+    </div>
+</div>

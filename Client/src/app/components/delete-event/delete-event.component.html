@@ -1,0 +1,23 @@
+<form 
+  class="form formStyle"
+  name="form"
+ #eventData="ngForm" 
+ (ngSubmit)="deleteEvent(eventData)">
+  <span class="title">{{'deleteEvent.deleteEventTittle' | translate}}</span>
+  <input 
+  [(ngModel)]="asyncSelected"
+  [typeahead]="statesComplex"
+  typeaheadOptionField="event_title"
+  [ngModelOptions]="{standalone: true}"
+  (typeaheadLoading)="changeTypeaheadLoading($event)"
+  (typeaheadOnSelect)="onSelect($event)"
+  typeaheadWaitMs="300"
+  required
+  ngModel
+  class="form-control input-field delete-icon"
+  >
+
+    <button class="btn custom-button " [disabled]="disabledButton">
+      {{'deleteEvent.deleteEventButton' | translate}}
+  </button>
+</form>

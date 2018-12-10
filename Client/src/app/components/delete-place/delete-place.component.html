@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="caption">
+    {{'delatePlace.caption' | translate}}
+  </div>
+  <div class="list-places">
+    <div class="place" *ngFor="let place of places">
+      <div class="place__name">
+        <span>
+          {{place.place_name}}
+        </span>
+      </div>
+      <div class="place__deleteBtn" >
+        <img src="../../../assets/form-icons/delete-icon.png" (click)="deletePlace(place.place_id)">
+      </div>
+    </div>
+  </div>
+</div>

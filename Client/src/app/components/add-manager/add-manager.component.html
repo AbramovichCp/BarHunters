@@ -1,0 +1,146 @@
+<div class="container">
+    <form 
+        class="row formStyle add-manager-form"
+        [formGroup]='addManagerForm'
+        (ngSubmit)='submitForm()' 
+        novalidate
+    >
+        <span class="title-text">
+            {{'addManager.addManagerTittle' | translate}}
+        </span>
+        <div class="form-group col-12">
+            <label for="name">
+                {{'addManager.label.name' | translate}}
+            </label>
+            <div class="input-wrapper">
+                <input 
+                    type="text"
+                    formControlName='managerName'
+                    class="form-control input-field name-icon"
+                    name="name"
+                    placeholder="{{'addManager.placeholder.name' | translate}}" 
+                    [ngClass]="{'hasError': getNameErrMsg() !== '' && addManagerForm.get('managerName').touched }"
+                >
+            </div>
+            
+            <div 
+                *ngIf="showErr(getNameErrMsg, addManagerForm, 'managerName')"
+                class="invalid-feedback text-error"
+            >
+                {{getNameErrMsg()}}
+            </div>
+        </div>
+
+        <div class="form-group col-12 ">
+            <label for="places">
+                {{'addManager.label.choosePlaces' | translate}}
+            </label>
+            <select
+                class="custom-select col-12 input-field choose-icon"
+                formControlName="choosePlace"
+            >
+            <option *ngFor="let place of places" [value]=[place]>
+                <span>{{place.place_name}}</span>
+            </option>
+        </select>
+        </div>
+
+        <div class="form-group col-12">
+            <label for="phone">
+                {{'addManager.label.phoneNumber' | translate}}
+        </label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        +380
+                    </div>
+                </div>
+                <input 
+                    type="text"
+                    formControlName='managerNumber'
+                    class="form-control input-field"
+                    name="phone"
+                    placeholder="{{'addManager.placeholder.number' | translate}}"
+                    [ngClass]="{'hasError': getPhoneErrMsg() !== '' && addManagerForm.get('managerNumber').touched}"
+                >
+                <!-- [ngClass]="{'hasError': showErr(getPhoneErrMsg,addManagerForm, 'managerNumber')}" -->
+            </div>
+            <div
+                *ngIf="showErr(getPhoneErrMsg,addManagerForm, 'managerNumber')"
+                class="invalid-feedback text-error"
+            >
+                {{getPhoneErrMsg()}}
+            </div>
+
+
+        </div>
+
+        <div class="form-group col-12">
+            <label for="mail">
+                {{'addManager.label.emailAddress' | translate}}
+            </label>
+            <input
+                type="email"
+                formControlName='managerEmail'
+                class="form-control input-field email-icon"
+                id="mail"
+                placeholder="{{'addManager.placeholder.enterEmail' | translate}}"
+                [ngClass]="{'hasError': getEmailErrMsg() != '' && addManagerForm.get('managerEmail').touched}"
+            >
+            <div 
+                *ngIf="showErr(getEmailErrMsg, addManagerForm, 'managerEmail')" 
+                class="invalid-feedback text-error"
+            >
+                {{getEmailErrMsg()}}.
+            </div>
+        </div>
+
+        <div class="form-group col-12 ">
+            <label for="password">
+                {{'addManager.label.password' | translate}}
+            </label>
+            <input
+                type="password"
+                formControlName='managerPassword'
+                class="form-control input-field password-icon"
+                #managerPassword 
+                name="password"
+                placeholder="{{'addManager.placeholder.password' | translate}}"
+                [ngClass]="{'hasError': getPasswordErrMsg() != '' && addManagerForm.get('managerPassword').touched }"
+            >
+            <div 
+                *ngIf="showErr(getPasswordErrMsg, addManagerForm, 'managerPassword')" 
+                class="invalid-feedback text-error"
+            >
+                {{getPasswordErrMsg()}}.
+            </div>
+        </div>
+
+        <div class="form-group col-12">
+            <label for="confirm">
+                {{'addManager.label.confirmPassword' | translate}}
+            </label>
+            <input 
+                type="password"
+                formControlName='confirmPassword'
+                class="form-control input-field confirm-icon"
+                #confirmPassword 
+                name="confirm"
+                placeholder="{{'addManager.placeholder.confirmPassword' | translate}}"
+            >
+            <div 
+                *ngIf="(confirmPassword.value !== managerPassword.value && addManagerForm.get('confirmPassword').touched) && confirmPassword.value != ''" 
+                class="invalid-feedback text-error"
+            >
+                Uncoresct password
+            </div>
+        </div>
+        <button
+            type="submit"
+            class="custom-button btn btn-primary"
+            [disabled]="(!addManagerForm.valid) || (confirmPassword.value !== managerPassword.value)"
+        >
+            {{'addManager.buttonSubmit' | translate}}
+        </button>
+    </form>
+</div>

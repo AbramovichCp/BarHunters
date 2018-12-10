@@ -1,0 +1,85 @@
+$headerColor: #111;
+$sideColor: #333;
+$mainColor: #555;
+.admin-panel {
+  width: 100%;
+  background: #666;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .container-fluid {
+    margin-right: 20%;
+    margin-top: 70px;
+    .header{
+      background-color: $headerColor;
+      color:#fff;
+      height: 45px;
+      .logo{
+        font-size: 25px;
+        cursor: pointer;
+      }
+      .navigation{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .logout{
+          cursor: pointer;
+        }
+      }
+    }
+    .main{
+      .side-menu {
+        background-color: $sideColor;
+        padding-top: 10px;
+        .side-menu__element{
+          display: flex;
+          align-items: center;
+          min-height: 40px;
+          color: #fff;
+          font-weight: 600;
+          border-bottom: 1px solid #555;
+          cursor: pointer;
+          transition: all 2.9s ease-in-out;
+          -moz-transition: all 2.9s ease-in-out;
+          span{
+            position: absolute;
+            // &:hover {
+            //   left: 18px;
+            //   color: #facaca;
+            // }
+          }
+          &:hover > span {
+            left: 18px;
+          }
+        }
+      }
+      .content {
+        background-color: $mainColor;
+        color: #fff;
+        padding: 10px auto 10px auto;
+        min-height: 67vh;
+        .form-wrapper{
+          padding: 15px;
+        }
+        .doube-form{
+          display: flex;
+          color: #111;
+        }
+        .addManager{
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+.success-alert {
+  position: absolute;
+  right: 10%;
+  top: 2%;
+  z-index: 1;
+}
+

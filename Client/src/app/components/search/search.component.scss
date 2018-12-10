@@ -1,0 +1,85 @@
+@import '../../../common/variable.scss';
+@import '../../../common/mixin.scss';
+
+.search-label {
+  padding: 10px 5px 5px;
+  display: inline-block;
+  color: #ffffff;
+  text-shadow: none;
+  font-size: 1.2rem;
+}
+
+.search-input {
+  width: 100%;
+  border-radius: 4px;
+  @include form-input;
+  height: calc(2.25rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $form-text-color;
+}
+
+input::placeholder {
+  color: $form-placeholder-color;
+  opacity: 1;
+}
+input::-moz-placeholder {
+  color: $form-placeholder-color;
+  opacity: 1;
+}
+
+input:focus {
+  outline-color: $form-placeholder-color;
+}
+
+input[type='checkbox']:after{
+  content: '';
+  display: inline-block;
+  line-height: 1.5;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -4px;
+  margin-left: -4px;
+  vertical-align: 4px;
+  border: 1px solid $form-text-color;
+  border-radius: 0.25em;
+  background-color: #c7c7c7;
+}
+
+input[type='checkbox']:checked:after {
+  width: 1rem;
+  height: 1rem;
+  background-color: #3f3f3f;
+}
+
+.btn-search {
+  position: relative;
+  margin: 30px 0 20px;
+  background-color: $btn-color;
+  color: #fff;
+}
+
+.form-group {
+  position: relative;
+}
+
+.clear-form-name, .clear-form-date  {
+  @include clear-form(50px, 15px, 0);
+}
+
+.clear-form-name:hover, .clear-form-date:hover {
+  color: #dc3545;
+}
+
+.clear-form {
+  padding: 10px 5px;
+  color: #ffffff;
+  text-shadow: none;
+  margin: 0;
+  float: right;
+  &:hover {
+    cursor: pointer;
+    color: #dc3545;
+  }
+}

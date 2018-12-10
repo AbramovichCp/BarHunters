@@ -1,0 +1,164 @@
+$font-stack:    Helvetica, sans-serif;
+$btn-color:  rgba(252, 104, 102,1);
+$btn-color-hover:rgba(252, 104, 102,0.7);
+$btn-color-active:rgba(252, 104, 102,0.9);
+$white-color: rgba(255, 255, 255, 1);
+$fs: 14px;
+
+
+
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #333;
+  border-radius: 10px;
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background: #fff;
+  .closeForm {
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color:  $btn-color;
+    font-family: $font-stack;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .closeForm:hover {
+    color:  $btn-color-hover
+  } 
+  .bs-timepicker-field{
+    background-color: #222;
+       color: #fff;
+       border: none;
+       border-radius: 0px;
+  }
+  .closeForm:active {
+    color:  $btn-color-active
+  }
+    .common {
+      width: 100%;
+      padding: 0;
+      margin: 0 0 5px 0 ;
+    }
+    .datepicker{
+      display: inline-block;
+      width: 100%;
+    }
+    .form-check{
+      text-align: left
+    }
+    .premium {
+      float: left;
+    }
+    .common {
+      cursor: pointer
+    }
+    .btn {
+      background: $btn-color;
+      color: #fff;
+    }
+    .errorMessage{
+      //position: absolute;
+      color: $btn-color;
+      font-size: $fs;
+      bottom: 0;
+    }
+}
+
+
+
+.title {
+  position: relative;
+  font-family: $font-stack;
+  font-weight: 700;
+  bottom: 10px;
+  right: 0;
+  color: $btn-color;
+  font-size: 18px;
+}
+
+/*upload styles*/
+.file_upload{
+  cursor: pointer;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  font-size: 1em;           
+  height: 2em;              
+  line-height: 2em       
+}
+.file_upload .button, .file_upload > mark{
+  display: block;
+  cursor: pointer           
+}
+.file_upload > button{
+ 
+  float: right;
+  width: 8em;         
+  height: 100%
+}
+.file_upload > div{
+  padding-left: 1em   
+}
+@media only screen and ( max-width: 500px ){
+  .file_upload > div{
+      display: none
+  }
+  .file_upload > button{
+      width: 100%
+  }
+}
+.file_upload input[type=file]{
+  position: absolute;
+    top: 0;
+    opacity: 0
+}
+.file_upload .button{
+ 
+  float: right;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 8em;                  
+  height: 100%;
+  text-align: center           
+}
+.file_upload > mark{
+  background: transparent;     
+  padding-left: 1em            
+}
+
+
+.file_upload{
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  transition: box-shadow 0.1s linear
+}
+.file_upload.focus{
+  box-shadow: 0 0 5px rgba(0,30,255,0.4)
+}
+.file_upload > button{
+ 
+  background: $btn-color;
+  transition: background 0.2s;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #fff;
+  text-shadow: #6200bd 0 -1px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+.file_upload:hover > button{
+  background: $btn-color;
+}
+.file_upload:active > button{
+  background: $btn-color-hover;
+}

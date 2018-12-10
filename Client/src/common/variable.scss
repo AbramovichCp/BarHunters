@@ -1,0 +1,41 @@
+$white: #FFFFFF;
+$red: #E84644;
+$brown: #2C1B18;
+
+$btn-color: $red;
+$text-color-ligth: $white;
+$title-color: $red;
+$title-first-color: $red;
+$title-second-color: $white;
+$menu-item-color: $white;
+$menu-item-underline-color: $white;
+$item-humburger-menu-color: $white;
+$bg-humburger-menu-color: $brown;
+$header-container-color: $brown;
+$footer-container-color: $brown;
+$user-icon-color: $red;
+$border-radius-card: 5px;
+$width-burger-line: 28px;
+$heigth-burger-line: 4px;
+$space-between-line: 9px;
+$shadow-text: 2px 4px 3px rgba(0, 0, 0, 0.3);
+
+$shadow-box: 0px 0px 50px #000000;
+$form-border-color: #495057;
+$form-background-color: #646060;
+$form-placeholder-color: #bdbdbd;
+$form-text-color: #c0c0c0;
+$form-selected-background-color: #575454;
+$custom-alert-background-color:rgba(44, 27, 24, 0.9);
+$form-button: #E84644;
+@keyframes neon6 {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 40px $title-first-color, 0 0 50px $title-first-color, 0 0 60px $title-first-color;
+    }
+    to {
+        text-shadow: 0 0 1px #fff, 0 0 10px #fff, 0 0 20px $title-first-color, 0 0 35px $title-first-color;
+    }
+}
+
+$small-card-background: linear-gradient(rgba(189, 59, 59, 0.6) 0%, rgba(66, 62, 62, 0.6) 100%);
+$profile-text-color: rgb(236, 236, 236);

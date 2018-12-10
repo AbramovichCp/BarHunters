@@ -1,0 +1,64 @@
+@import '../../../common/mixin.scss';
+@import '../../../common/variable.scss';
+.footer{
+  padding: 20px 0;
+  background: $footer-container-color;
+  min-height: 200px;
+  color: $btn-color;
+}
+.footer-items{
+  width: 80vw;
+}
+.footer-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & h4{
+      color: darken($color: $white, $amount: 20%);
+      font-size: 2em;
+      text-shadow: 2px 2px 2px #111;
+      margin: 0 0 20px 0;
+    }
+    ul{
+      list-style: none;
+      padding: 0;
+    }
+    .footer-item{
+      width: fit-content;
+      cursor: pointer;
+      font-size: 1.3em;
+      font-weight: 300;
+      line-height: 2em;
+      transition: .3s;
+      &:hover{
+        opacity: .9;
+        transform: translateX(10px);
+      }
+      & i {
+        margin-right: 10px;
+      }
+      & a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    p{
+      opacity: .8;
+      font-weight: 300;
+      line-height: 2em;
+      max-width: 300px;
+      margin: 5px 0 5px 0;
+    }
+  }
+
+  @media screen and (min-width: 768px){
+    .footer-item{
+      opacity: .4;
+    }
+  }
+  
+  @media screen and (max-width: 768px){
+    .footer-item{
+      opacity: .9;
+    }
+  }

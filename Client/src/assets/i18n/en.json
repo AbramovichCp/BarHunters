@@ -1,0 +1,221 @@
+{
+    "addManager": {
+        "addManagerTittle": "Add Manager",
+        "label": {
+            "name": "Name",
+            "choosePlaces": "Choose places",
+            "phoneNumber": "Phone number",
+            "emailAddress": "Email address",
+            "password": "Password",
+            "confirmPassword": "Confirm password"
+        },
+
+        "placeholder": {
+            "name": "Name",
+            "number": "Number",
+            "enterEmail": "Enter email",
+            "password": "Password",
+            "confirmPassword": "Confirm password"
+        },
+        "buttonSubmit": "Add"
+    },
+    "addEvent": {
+        "createNewEvent": "Add event",
+        "placeholder": {
+            "eventName": "Event name",
+            "datePicker": "Datepicker",
+            "eventDescription": "Event description",
+            "selectPlace": "Select place",
+            "selectArtists": "Select artists"
+        },
+        "buttonAddPhoto": "Choose photo",
+        "eventTitle": "Add event title",
+        "dateTitle": "Choose date",
+        "desTitle": "Add description",
+        "locTitle": "Choose location",
+        "participantsTitle": "Add participants",
+        "posterTitle": "Choose poster",
+        "buttonText": "Create event",
+        "premiumLabel": "Premium",
+        "error": "Field is required"
+    },
+    "deleteEvent": {
+        "deleteEventTittle": "Delete event",
+        "deleteEventButton": "Delete event"
+    },
+    "delatePlace": {
+        "caption": "List of places"
+    },
+    "editEvent": {
+        "editEventTittle": "Edit event",
+        "placeholder": {
+            "eventTitle": "Event name",
+            "datePicker": "Datepicker",
+            "eventDescription": "Event description",
+            "selectPlace": "Select place",
+            "selectArtists": "Select artists"
+        },
+        "eventTitle": "Add event title",
+        "dateTitle": "Choose date",
+        "desTitle": "Add description",
+        "locTitle": "Choose location",
+        "participantsTitle": "Add participants",
+        "posterTitle": "Choose poster",
+        "buttonText": "Edit",
+        "premiumLabel": "Premium",
+        "error": "Field is required"
+    },
+    "eventListEdit": {
+        "eventListEditTittle": "Edit event",
+        "placeholder": {
+            "selectPlace": "Select place"
+        }
+    },
+    "addPlace": {
+        "addPlaceTittle": "Add Place",
+        "label": {
+            "name": "Bar name",
+            "location": "Location",
+            "phoneNumber": "Phone number",
+            "capacity": "Capacity"
+        },
+        "placeholder": {
+            "name": "Bar name",
+            "location": "Location",
+            "phoneNumber": "Phone number",
+            "placeCapacity": "Place capacity"
+        },
+        "buttonAdd": "Add",
+        "buttonMap": "Map"
+    },
+    "adminPanel": {
+        "menu": {
+            "addNewEven": "Add new event",
+            "addNewPlace": "Add new place",
+            "addNewManagers": "Add new manager",
+            "changeEvent": "Edit event",
+            "deleteEvent": "Delete event",
+            "deletePlace": "Delete place"
+        }
+    },
+    "allEvents": {
+        "loadMore": "Show More",
+        "back": "Back to All Events"
+    },
+    "barsList": {},
+    "eventDetails": {
+        "artists": "Artists",
+        "register": "Register",
+        "ifRegistered": "You already registered on this event!",
+        "evntTitleLinkTo": "link to",
+        "eventTitleWeb": "facebook"
+    },
+    "footer": {
+        "map": "Map",
+        "contact": "Contact",
+        "support": "Support",
+        "home": "Home",
+        "allEvents": "All Events",
+        "upcomingEvents": "Upcoming Events",
+        "bars": "Bars",
+        "address": {
+            "city": "Chernivtsi",
+            "street": "Holovna Str."
+        },
+        "helpInfo": "Just send us your questions and we will give you the help you need."
+    },
+    "forms": {},
+    "header": {
+        "menuItemHome": "Home",
+        "menuItemEvents": "Events",
+        "menuItemBars": "Bars",
+        "menuItemSupport": "Support",
+        "menuItemAllEvents": "All Events",
+        "search": {
+            "chooseEventName": "Choose event name",
+            "chooseDates": "Choose dates",
+            "chooseBars": "Choose bars",
+            "buttonSelectAll": "Select All",
+            "buttonSearch": "Search",
+            "clearAll": "Clear all inputs"
+        },
+        "placeholder": {
+            "eventName": "Print event name",
+            "dates": "Choose dates",
+            "barsOrBarName": "Choose bars or print bar name"
+        }
+    },
+    "homePage": {},
+    "lastEvents": {
+        "buttonAllEvents": "All Events"
+    },
+    "placeDetails": {},
+    "premiumEvents": {
+        "buttonMore": "VIEW MORE"
+    },
+    "userProfile": {
+        "invalidUserName": "Invalid username",
+        "invalidPhone": "Invalid phone",
+        "buttonEdit": "Edit",
+        "upcomingEvents": "Your upcoming events",
+        "eventDetails": "read more"
+    },
+    "userSignIn": {
+        "signIn": "Sign in",
+        "invalidEmail": "Invalid email",
+        "invalidPassword": "Invalid password",
+        "register": "Register",
+        "forgotPassword": "Forgot password?",
+        "buttonSignIn": "Sign in",
+        "placeholder": {
+            "enterEmail": "Enter your email",
+            "enterPassword": "Enter your password"
+        }
+    },
+    "userRegistration": {
+        "register": "Register",
+        "invalidUserName": "Invalid username",
+        "submit": "Submit",
+        "signIn": "Sign in",
+        "placeholder": {
+            "username": "Username",
+            "email": "Email",
+            "phone": "Phone",
+            "password": "Password",
+            "confirmPassword": "Confirm password"
+        }
+    },
+    "resetPassword": {
+        "enterNewPassword": "Enter new password!",
+        "reset": "Reset",
+        "placeholder": {
+            "password": "Password",
+            "confirmPassword": "Confirm password"
+        }
+    },
+    "forgotPassword": {
+        "forgotPass": "Forgot password?",
+        "invalidEmail": "Invalid email",
+        "resetPassword": "Reset password",
+        "buttonBack": "Back",
+        "placeholder": {
+            "enterEmail": "Email"
+        }
+    },
+    "sidebarAdmin": {
+        "addEvent": "Добавить событие"
+    },
+    "alertMessages": {
+        "signIn": "Welcome!",
+        "registerOnEvent": "Thank you for registration!",
+        "addManager": "Manager has been added successfully!",
+        "changePersonalInfo": "Your name and phone were successfully changed!",
+        "unsubscribeFromEvent": "You have been successfully unsubscribed!",
+        "errorMessage": "Sorry, something went wrong!",
+        "userRegistration": "Your account was successfully registered. Please check your Email to activate the account",
+        "verified": "Your account has been successfully verified!",
+        "forgotPass": "Check your mail for the following instructions",
+        "resetPass": "Your password has been successfully changed!"
+    },
+    "momentLocalizateDate": "en"
+}

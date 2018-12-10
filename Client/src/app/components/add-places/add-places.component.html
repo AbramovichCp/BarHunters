@@ -1,0 +1,91 @@
+<div class="container">
+    <form 
+        class="row place-form formStyle"
+        [formGroup]='addPlaceForm'
+        (ngSubmit)='submitForm()'
+        novalidate
+    >
+        <div 
+            class="google-map col-md-12"
+            [class.active_map]="gmapStatus === true"
+        >
+            <button 
+                type="button"
+                class="btn custom-button"
+                id="confirm-coords"
+                value="Select"
+                (click)=confirmCoords()
+            >
+                OK
+            </button>
+            <agm-map
+                [latitude]="latitude" 
+                [longitude]="longitude" 
+                (mapClick)="onChoseLocation($event)" 
+                [zoom]="15">
+                <agm-marker
+                    [latitude]="coords[0]" 
+                    [longitude]="coords[1]" 
+                    *ngIf="locationChosen">
+                </agm-marker>
+            </agm-map>
+        </div>
+        <span class="title-text">
+            {{'addPlace.addPlaceTittle' | translate}}
+        </span>
+        <div class="form-group col-12">
+            <label for="name">
+              {{'addPlace.label.name' | translate}}
+        </label>
+            <input type="text" formControlName='placeName' class="form-control input-field place-name-icon" name="name" placeholder="{{'addPlace.placeholder.name' | translate}}">
+            <div *ngIf="getNameErrMsg() != '' " class="invalid-feedback text-error">
+                {{getNameErrMsg()}}
+            </div>
+        </div>
+        <div class="form-group col-12">
+            <label for="location">
+              {{'addPlace.label.location' | translate}}
+            </label>
+            <input 
+                type="text"
+                id="addressGoogle"
+                formControlName='placeAddres'
+                class="form-control input-field location-icon"
+                name="location"
+                [(ngModel)]="address"
+                #search
+            >
+            <div 
+                class="btn-google-map custom-button"
+                (click)=openGoogleMaps()
+            >
+                Map
+            </div>
+        </div>
+        <div class="form-group col-12">
+            <label for="phone">
+              {{'addPlace.label.phoneNumber' | translate}}
+            </label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        +380
+                    </div>
+                </div>
+                <input type="text" class="form-control input-field" formControlName='placeContactNumber' placeholder="{{'addPlace.placeholder.phoneNumber' | translate}}">
+            </div>
+            <div *ngIf="getPhoneErrMsg() != '' && addPlaceForm.get('placeContactNumber').touched" class="invalid-feedback">
+                {{getPhoneErrMsg()}}.
+            </div>
+        </div>
+        <div class="form-group col-12">
+            <label for="capacity">
+              {{'addPlace.label.capacity' | translate}}
+            </label>
+            <input type="text" formControlName='placeCapacity' class="form-control input-field capacity-icon" name="capacity" placeholder="{{'addPlace.placeholder.placeCapacity' | translate}}">
+        </div>
+        <button type="submit" class="btn btn-primary custom-button" [disabled]="(!addPlaceForm.valid)">
+          {{'addPlace.buttonAdd' | translate}}
+  </button>
+    </form>
+</div>

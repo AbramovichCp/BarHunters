@@ -1,0 +1,173 @@
+<form 
+    class='form  formStyle'
+    name='form'
+    #eventData="ngForm"
+    (ngSubmit)="editEvent(eventData)"
+    >
+    <span class="title">
+        {{'editEvent.editEventTittle' | translate}}
+    </span>
+    <div 
+        class="closeForm"
+        (click)="closeForm()"
+    >
+        CLOSE
+    </div>
+    <div class="form-group common">
+        <label for="eventName">
+            {{'editEvent.eventTitle' | translate}}
+        </label>
+        <input 
+            type="text"
+            class="form-control input-field"
+            id="eventName"
+            placeholder="{{'editEvent.placeholder.eventTitle' | translate}}"
+            name='eventName'
+            ngModel
+            [(ngModel)]="eventNameValue"
+            #eventName="ngModel"
+        >
+        <div 
+            *ngIf="eventName.invalid && (eventName.dirty || eventName.touched)"
+            class="errorMessage"
+        >
+            Event name is required
+        </div>
+    </div>
+    <div class="row form-group common">
+
+        <label for="editEventDate">{{'editEvent.dateTitle' | translate}}</label>
+        <input 
+            [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }"
+            placeholder="{{'editEvent.placeholder.datePicker' | translate}}"
+            class="form-control datepicker input-field"
+            bsDatepicker
+            id="editEventDate"
+            name='dataPicker'
+            [minDate]="minDate"
+            [maxDate]="maxDate"
+            ngModel
+            #datePicker="ngModel"
+            [(ngModel)]="dateValue"
+        >
+        <div 
+            *ngIf="datePicker.invalid && (datePicker.dirty || datePicker.touched)" 
+            class="errorMessage"
+        >
+            <div *ngIf="datePicker.errors.required">
+                Date is required.
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row form-group timePicker common">
+        <timepicker 
+            [(ngModel)]="timePicker"
+            [showMeridian]="true"
+            [showSpinners]="false"
+            [ngModelOptions]="{standalone: true}"
+        >
+        </timepicker>
+    </div>
+    <div class="form-group common">
+        <label for="eventEditDes">
+          {{'editEvent.desTitle' | translate}}
+      </label>
+        <input 
+            type="text"
+            class="form-control input-field"
+            id="eventEditDes"
+            placeholder="{{'editEvent.placeholder.eventDescription' | translate}}"
+            name='description'
+            ngModel 
+            [(ngModel)]="desValue"
+            #des="ngModel"
+        >
+        <div 
+            *ngIf="des.invalid && (des.dirty || des.touched)"
+            class="errorMessage"
+        >
+            <div *ngIf="des.errors.required">
+                {{'editEvent.error' | translate}}
+            </div>
+        </div>
+    </div>
+
+    <label>
+        {{'editEvent.locTitle' | translate}}
+    </label>
+    <ng-select 
+        [items]="placesArray" 
+        bindLabel="place_name"
+        placeholder="{{'editEvent.placeholder.selectPlace' | translate}}"
+        bindValue="place_id"
+        #defaultSelected
+        [(ngModel)]="selectedPlace"
+        [ngModelOptions]="{standalone: true}"
+        [closeOnSelect]="false"
+        class="common input-field"
+        name='location'
+        ngModel
+        #place="ngModel"
+    >
+    </ng-select>
+    <div 
+        *ngIf="place.invalid && (place.dirty || place.touched)"
+        class="errorMessage"
+    >
+        <div *ngIf="place.errors.required">
+            {{'editEvent.error' | translate}}
+        </div>
+    </div>
+
+    <label>{{'editEvent.participantsTitle' | translate}}</label>
+    <ng-select 
+        [items]="artistsArray"
+        bindLabel="artist_name"
+        placeholder="{{'editEvent.placeholder.selectArtists' | translate}}"
+        [(ngModel)]="selectedArtists"
+        bindValue="artist_id"
+        #defaultSelected
+        [multiple]="true" 
+        [ngModelOptions]="{standalone: true}"
+        [closeOnSelect]="false"
+        class="artistsSelect common" 
+        name='artists'
+    >
+    </ng-select>
+
+    <div class="form-check premium">
+        <input 
+            class="form-check-input input-field"
+            type="checkbox"
+            value=""
+            id="premiumEditEvent"
+            [(ngModel)]="premium"
+            [ngModelOptions]="{standalone: true}"
+        >
+        <label
+            class="form-check-label"
+            for="premiumEditEvent"
+        >
+            {{'editEvent.premiumLabel' | translate}}
+        </label>
+    </div>
+    <div class="file_upload common">
+        <button type="button">
+            {{'editEvent.buttonAddPhoto' | translate}}
+        </button>
+        <div>{{imageStatus}}</div>
+        <input 
+            type="file"
+            class="form-control-file form-control-sm common imageUpload" 
+            id="imageEditEvent"
+            name='poster'
+            ngModel
+            (change)="imageChangeUploaded($event)"
+        >
+    </div>
+    <button class="btn">
+     {{'editEvent.buttonText' | translate}}
+  </button>
+</form>

@@ -1,0 +1,346 @@
+@import '../../../common/mixin.scss';
+@import '../../../common/variable.scss';
+.place-details-modal {
+    min-width: 1000px;
+    top: 20%;
+}
+
+.modal-content {
+    border: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.modal-container {
+    object-fit: cover;
+    background-size: cover;
+    height: 500px;
+    color: $white;
+}
+
+.image-container, .event-image-container {
+    background-size: cover;
+}
+
+.image-fade {
+    z-index: 995;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(179, 42, 12, 0.3), rgba(0, 0, 0, 0.5));
+}
+
+.place-name {
+    z-index: 996;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    @include title-main($white, $white);
+    text-shadow: 0 0 20px;
+}
+
+.address-bar {
+    position: absolute;
+    bottom: 3%;
+    right: 5%;
+    z-index: 996;
+    @include title-main($white, $white);
+    font-size: 2em;
+}
+
+.content-container {
+    overflow: hidden;
+    padding: 10px 0;
+    margin: -15px 0 -15px 0;
+    background: $brown;
+    background-size: cover;
+    transition: transform 1s;
+    z-index: 998;
+    max-height: 530px;
+    &::before {
+        position: absolute;
+        top: 80px;
+        left: 20px;
+        content: '';
+        background: darken($brown, 5%);
+        width: 1px;
+        height: 100%;
+        transition: .5s;
+    }
+}
+
+.scrollbar {
+    height: 93%;
+}
+
+.event-count {
+    padding-left: 40px;
+    color: $red;
+    font-weight: bold;
+    margin-bottom: 25px;
+    &::after {
+        content: '';
+        background: linear-gradient(to right, $title-color, #ff000000);
+        position: absolute;
+        width: 90%;
+        height: 1px;
+        left: 5%;
+        top: 40px;
+    }
+}
+
+ .close {
+    outline: none;
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    z-index: 999;
+}
+
+.cross {
+    height: 19px;
+    width: 19px;
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    &::before,
+    &::after {
+        transform-origin: left;
+        position: absolute;
+        content: '';
+        background: $red;
+        width: 24px;
+        height: 2px;
+        opacity: 1;
+        left: 0;
+    }
+    &::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    &::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+}
+
+.arrow {
+    outline: none;
+    position: absolute;
+    top: 15px;
+    right: 50px;
+    height: 19px;
+    width: 19px;
+    display: none;
+    z-index: 999;
+    transition: .5s;
+    &::before,
+    &::after {
+        transform-origin: left;
+        position: absolute;
+        content: '';
+        background: $red;
+        width: 24px;
+        height: 2px;
+        opacity: 1;
+        left: 0;
+        width: 13px;
+        transition: 1s;
+        opacity: .5;
+    }
+    &::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    &::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+    }
+    &:hover {
+        cursor: pointer;
+        &::before,
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+.show-event {
+    transform: translate(-100%, 0);
+}
+
+.event-container {
+    transition: .4s;
+}
+
+.event-block {
+    width: 80%;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 0 15px 0;
+    &::before {
+        content: '';
+        display: block;
+        width: 11px;
+        height: 11px;
+        border-radius: 7.5px;
+        background: darken($brown, 5%);
+        position: absolute;
+        top: 21px;
+        left: 15px;
+        transition: .3s;
+    }
+    &:hover {
+        & .event-title,
+        & .event-date {
+            transition: .3s;
+            transform: translateX(10%);
+        }
+    }
+    & .event-title {
+        color: rgba($color: $white, $alpha: .5);
+        transition: .3s;
+        margin-left: 40px;
+    }
+    .event-date {
+        position: absolute;
+        bottom: 0;
+        left: 40px;
+        width: 100%;
+        color: rgba($color: $red, $alpha: .8);
+        transition: .3s;
+    }
+}
+
+.active-event {
+    .event-block::before {
+        background: $red;
+    }
+    & .event-title {
+        color: $white;
+    }
+    & .event-title,
+    .event-date {
+        transition: .3s;
+        transform: translateX(10%);
+    }
+}
+
+.event-details {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    padding-left: 0;
+    right: 0;
+    color: $white;
+    background-size: cover;
+}
+
+.visible {
+    display: block;
+    opacity: 1;
+    transition: visibility 0s linear 0.8s, opacity 0.5s linear;
+}
+
+.hidden{
+    display: none;
+}
+
+.image-hover {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.img-cover {
+    position: absolute;
+    top: 0;
+    z-index: 989;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.about-event-block {
+    z-index: 990;
+    position: absolute;
+    padding: 20px;
+    background-color: rgba(53, 53, 53, 0.65);
+    width: 100%;
+}
+
+.event-image-container{
+    height: 100%;
+    padding: 0;
+}
+
+@media screen and (max-width: 1330px) {
+    .place-details-modal {
+        min-width: 950px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .modal-container .event-block {
+        width: 60%;
+    }
+    .place-details-modal {
+        min-width: 95vw;
+        font-size: 0.8em;
+        top: 0;
+        min-height: 100vh;
+    }
+    .event-title {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .place-details-modal {
+        top: 0;
+        min-height: 95vh;
+        height: 98vh;
+    }
+    .show-event {
+        transform: translate(0, -100%);
+    }
+    .modal-container {
+        height: 98vh;
+    }
+    .image-container {
+        max-height: 50%;
+        height: 50%;
+    }
+    .content-container {
+        height: 50%;
+    }
+    .event-details {
+        height: 50%;
+        bottom: 0;
+    }
+    .arrow {
+        margin-bottom: 5px;
+        top: 90%;
+        right: 5%;
+        &::before,
+        &::after {
+            top: 50%;
+            left: 50%;
+        }
+        &::before {
+            transform: rotate(-45deg);
+        }
+        &::after {
+            transform: rotate(225deg);
+        }
+    }
+}
+
+
+

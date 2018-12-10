@@ -1,0 +1,195 @@
+
+$font-stack:    Helvetica, sans-serif;
+$button-color:  rgba(252, 104, 102,1);
+$font-stack:    Helvetica, sans-serif;
+$btn-color:  rgba(252, 104, 102,1);
+$btn-color-hover:rgba(252, 104, 102,0.7);
+$btn-color-active:rgba(252, 104, 102,0.9);
+$white-color: rgba(255, 255, 255, 1);
+$inputColor: #222;
+$fs: 14px;
+$fs: 14px;
+@mixin input-icon{
+  background-size: 1.1em;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-x: 3%;
+  padding-left: 12%;
+  &::placeholder{
+      padding: 0 1%;
+  }  
+}
+.input-field{
+  background-image: url('../../../assets/form-icons/bar-icon.png');
+  @include input-icon;
+}
+.form {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 300px;
+  margin: 20px 0;
+  padding: 20px;
+
+  .datepicker{
+    display: inline-block;
+    width: 100%;
+  }
+  .submit-form{
+    margin-top: 20px;
+  }
+  .form-check{
+    text-align: left;
+    margin: 5px auto;
+    margin-right: 65%;
+    }
+    .premium {
+      float: left;
+    }
+    .common {
+      cursor: pointer;
+      position: relative;
+      margin: 0 0 5px 0 ;
+      width: 100%;
+      padding: 0;
+    }
+    .btn {
+      background: $button-color;
+      color: #fff;
+    }
+}
+.cust{
+  background-color: #222 ;
+} 
+.timePicker{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  
+}
+.bs-timepicker-field{
+  background-color: #222;
+     color: #fff;
+     border: none;
+     border-radius: 0px;
+}
+.errorMessage{
+  //position: absolute;
+  color: $button-color;
+  font-size: $fs;
+  bottom: 0;
+}
+
+
+span {
+  position: relative;
+  font-family: $font-stack;
+  font-weight: 700;
+  bottom: 10px;
+  right: 0;
+  color: $button-color;
+  font-size: 18px;
+}
+
+
+/*upload styles*/
+.file_upload{
+  cursor: pointer;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  font-size: 1em;           
+  height: 2em;              
+  line-height: 2em       
+}
+.file_upload .button, .file_upload > mark{
+  display: block;
+  cursor: pointer           
+}
+.file_upload > button{
+ 
+  float: right;
+  width: 8em;         
+  height: 100%
+}
+.file_upload > div{
+  padding-left: 1em   
+}
+.select-label{
+  margin-right: 53%;
+}
+@media only screen and ( max-width: 500px ){
+  .file_upload > div{
+      display: none
+  }
+  .file_upload > button{
+      width: 100%
+  }
+}
+.file_upload input[type=file]{
+  position: absolute;
+    top: 0;
+    opacity: 0
+}
+.file_upload .button{
+ 
+  float: right;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 8em;                  
+  height: 100%;
+  text-align: center           
+}
+.file_upload > mark{
+  background: transparent;     
+  padding-left: 1em            
+}
+
+.file_upload{
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  transition: box-shadow 0.1s linear;
+  background-color: #222;
+}
+.file_upload.focus{
+  box-shadow: 0 0 5px rgba(0,30,255,0.4)
+}
+.file_upload > button{
+ 
+  background: $btn-color;
+  transition: background 0.2s;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: #fff;
+  text-shadow: #6200bd 0 -1px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+.file_upload:hover > button{
+  background: $btn-color;
+}
+.file_upload:active > button{
+  background: $btn-color-hover;
+}
+ng-select{
+  background-image: url('../../../assets/form-icons/bar-icon.png');
+  @include input-icon;
+}
+.event-icon{
+  background-image: url('../../../assets/form-icons/event-icon.png');
+  @include input-icon;
+}
+.date-icon{
+  background-image: url('../../../assets/form-icons/date-icon.png');
+  @include input-icon;
+}
+.description-icon{
+  background-image: url('../../../assets/form-icons/description-icon.png');
+  @include input-icon;
+}
+
+
+

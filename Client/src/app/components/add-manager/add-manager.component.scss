@@ -1,0 +1,59 @@
+$btn-color:  rgba(252, 104, 102,1);
+@mixin input-icon{
+    background-size: 1.1em;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position-x: 3%;
+    padding-left: 12%;
+    &::placeholder{
+        padding: 0 1%;
+    }  
+}
+.add-manager-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto 15px;
+    padding-block-start: 1em;
+    margin-bottom: 1.5em;
+    margin-top: 10px ;
+    .title{
+        font-weight: 700;
+        font-size: 1.2em;
+        font-family: 'Century Gothic', sans-serif
+    }
+    button{
+        cursor: pointer; 
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+    }
+    .form-group{
+        margin: 10px  0 10px 0;
+        padding: auto 15px;
+        .invalid-feedback{
+            display: block;
+            position: absolute;
+            font-size: 0.8em;
+        }
+        .name-icon{
+            background-image: url('../../../assets/form-icons/manager-icon.png');
+            @include input-icon;
+        }
+        .choose-icon{
+            background-image: url('../../../assets/form-icons/bar-icon.png');
+            @include input-icon;
+        }
+        .email-icon{
+            background-image: url('../../../assets/form-icons/email-icon.png');
+            @include input-icon;
+        }
+        .password-icon{
+            background-image: url('../../../assets/form-icons/password-icon.png');
+            @include input-icon;
+        }
+        .confirm-icon{
+            background-image: url('../../../assets/form-icons/confirm-icon.png');
+            @include input-icon;
+        }
+    }
+}

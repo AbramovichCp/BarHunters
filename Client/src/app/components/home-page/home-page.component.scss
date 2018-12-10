@@ -1,0 +1,28 @@
+@import '../../../common/variable.scss';
+@import '../../../common/mixin.scss';
+
+.first-screen{
+  z-index: 2;
+  height: 100vh;
+  padding: 80px 0 20px 0;
+  background: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5) ), url("../../../assets/3.jpg");
+  @include image-in-block();
+  background-attachment: fixed;
+  box-shadow: 0 0 30px rgba(0,0,0,.8)inset,
+              0 -10px 30px rgba(0,0,0,.8)inset;
+}
+
+.second-screen{
+  background: $white;
+  padding: 80px 0 20px 0;
+}
+
+.third-screen{
+  padding: 80px 0 0 0;
+  background: linear-gradient(rgba(1,1,1, .7), rgba(0,0,0, 0.8) ), url("../../../assets/2.jpg");
+  @include image-in-block();
+  background-attachment: fixed;
+  box-shadow: 0 0 30px rgba(0,0,0,.8)inset,
+                0 -10px 30px rgba(0,0,0,.8)inset;
+}
+

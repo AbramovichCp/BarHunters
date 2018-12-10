@@ -1,0 +1,26 @@
+<div class="container-fluid premium-events-container">
+    <div class="row justify-content-between">
+        <h2 class="col-12 title-categories">hot&nbsp;events</h2>
+        <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig">
+            <div class="col-10 premium-event-slider-item" ngxSlickItem *ngFor="let event of events">
+                <div class="col-10 premium-event-card" [ngStyle]="{
+            'background-image':
+              'linear-gradient(rgba(33, 33, 33, 0.3), rgba(33, 33, 33, 0.3) ),url(' +
+              event.event_poster +
+              ')'
+          }">
+                    <h3 class="event-caption">{{ event.event_title }}</h3>
+                    <app-btn-details (click)="eventDetails(event.event_id)"></app-btn-details>
+                    <div class="premium-event-info">
+                        <h4 class="bar-name">{{ event.place_id[0].place_name }}</h4>
+                        <span class="bar-address">{{
+              event.place_id[0].place_address
+              }}</span><br />
+                        <span class="event-date">{{ event.event_date  | localizeEventsDates | uppercase }}
+            </span>
+                    </div>
+                </div>
+            </div>
+        </ngx-slick>
+    </div>
+</div>

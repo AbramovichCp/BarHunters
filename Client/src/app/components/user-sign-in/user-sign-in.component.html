@@ -1,0 +1,53 @@
+<div class="container-fluid h-100">
+    <div class="row">
+
+        <div class="form-container col-sm-10 col-md-10 col-lg-5">
+
+            <p class="heading">{{'userSignIn.signIn' | translate}}</p>
+
+            <form 
+              [formGroup]="signInForm" 
+              #formDirective="ngForm" 
+              (ngSubmit)="submit(signInForm, formDirective)" 
+              novalidate>
+                <div class="form-group">
+                    <input 
+                      formControlName="email" 
+                      type="email" 
+                      placeholder="{{'userSignIn.placeholder.enterEmail' | translate}}" 
+                      class="form-control">
+                    <div 
+                      *ngIf="getEmailErrMsg() != '' && signInForm.get('email').touched" 
+                      [ngClass]="{'hasError': getEmailErrMsg() != '' && signInForm.get('email').touched}">
+                        {{getEmailErrMsg()}}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input 
+                      formControlName="password" 
+                      type="password" 
+                      placeholder="{{'userSignIn.placeholder.enterPassword' | translate}}" 
+                      class="form-control">
+                    <div 
+                      *ngIf="getPasswordErrMsg() != '' && signInForm.get('password').touched" 
+                      [ngClass]="{'hasError': getPasswordErrMsg() != '' && signInForm.get('password').touched}">
+                        {{getPasswordErrMsg()}}
+                    </div>
+                </div>
+
+                <button 
+                  type="submit" 
+                  class="btn submit-btn" 
+                  [disabled]="!signInForm.valid">{{'userSignIn.buttonSignIn' | translate}}</button>
+
+            </form>
+
+            <a class="router-link" routerLink="/BarsHunters/register">{{'userSignIn.register' | translate}}</a>
+            <a class="router-link forgot-pw-link" routerLink="/BarsHunters/forgot-pw">{{'userSignIn.forgotPassword' | translate}}</a>
+
+        </div>
+
+
+    </div>
+</div>

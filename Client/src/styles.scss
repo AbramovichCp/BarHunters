@@ -1,0 +1,155 @@
+@import '../src/common/mixin.scss';
+@import '../src/common/variable.scss';
+@import '~@ng-select/ng-select/themes/default.theme.css'; //for theming NgSelectModule
+@import './app/components/event-details/event-details.component.scss';
+@import './app/components/place-details/place-details.component.scss';
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+.scrollbar>.ps.ps--active-y>.ps__rail-y {
+    width: 0;
+    background: none;
+}
+
+.scrollbar .ps__rail-y:hover>.ps__thumb-y {
+    max-width: 6px;
+}
+
+.scrollbar>.ps.ps--scrolling-y>.ps__rail-y {
+    background: none;
+}
+
+.scrollbar .ps__thumb-y {
+    max-width: 6px;
+}
+
+//***************Slick Carousel******************
+.carousel .my-dots {
+    bottom: 0px;
+    & li button::before {
+        color: $red;
+        font-size: 8px;
+    }
+    & li.slick-active button:before {
+        color: $red
+    }
+}
+
+
+//***************NG-Select for search-form******************
+.ng-select .ng-select-container {
+    border-radius: 4px;
+    @include form-input;
+    color: $form-text-color;
+}
+
+.ng-select.ng-select-opened>.ng-select-container {
+    border-radius: 4px;
+    @include form-input;
+    color: $form-text-color;
+}
+
+.ng-select .ng-select-container .ng-value-container .ng-placeholder {
+    color: $form-placeholder-color;
+    opacity: 1;
+}
+
+.ng-select .ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+    border-color: $form-placeholder-color;
+}
+
+.ng-dropdown-panel {
+    @include form-input;
+    .ng-dropdown-panel-items {
+        background-color: #646060;
+        .ng-optgroup,
+        .ng-option {
+            @include form-field($form-text-color, $form-background-color);
+        }
+    }
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-marked {
+    @include form-field($form-text-color, $form-selected-background-color);
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
+    @include form-field($form-text-color, $form-selected-background-color);
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-selected {
+    @include form-field($form-text-color, $form-selected-background-color);
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected {
+    @include form-field($form-text-color, $form-selected-background-color);
+}
+
+.ng-select .ng-select-container .ng-value-container .ng-input>input {
+    color: $form-text-color;
+}
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
+    background-color: transparent;
+    color: $form-text-color;
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+    border-color: $form-placeholder-color;
+}
+
+.ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-value .ng-value-icon.left:hover {
+    @include form-field($form-text-color, $form-selected-background-color);
+}
+
+body .modal-backdrop.show {
+    opacity: .7;
+}
+
+.ng select,
+.ng-select-container {
+    background-color: #222 !important;
+    color: #555 !important;
+    border: none !important;
+    border-radius: 0px !important;
+}
+
+.time-picker {
+    input {
+        background-color: #222;
+        color: #fff;
+        border: none;
+        border-radius: 0px;
+        &:focus {
+            background-color: #222;
+            color: #fff;
+            border: none;
+            border-radius: 0px;
+        }
+    }
+    button {
+        background-color: #222;
+        color: #fff;
+        border: none;
+        border-radius: 0px;
+    }
+  }
+  .bs-timepicker-field{
+    background-color: #222;
+       color: #fff;
+       border: none;
+       border-radius: 0px;
+  }
+@media screen and (max-width: 488px) {
+  .admin-panel .offset-2{
+    margin-left: 0;
+  }
+}

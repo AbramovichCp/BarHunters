@@ -1,0 +1,222 @@
+{
+    "addManager": {
+        "addManagerTittle": "Добавить менеджера",
+        "label": {
+            "name": "Имя",
+            "choosePlaces": "Выбрать место",
+            "phoneNumber": "Номер телефона",
+            "emailAddress": "Почта",
+            "password": "Пароль",
+            "confirmPassword": "Подтвердить пароль"
+        },
+
+        "placeholder": {
+            "name": "Имя",
+            "number": "Номер телефона",
+            "enterEmail": "Почта",
+            "password": "Пароль",
+            "confirmPassword": "Подтвердить пароль"
+        },
+        "buttonSubmit": "Добавить"
+    },
+    "addEvent": {
+        "createNewEvent": "Добавить событие",
+        "placeholder": {
+            "eventName": "Название события",
+            "datePicker": "Дата события",
+            "eventDescription": "Описание события",
+            "selectPlace": "Выбрать место",
+            "selectArtists": "Выбрать участников"
+        },
+        "buttonAddPhoto": "Выбрать фото",
+        "eventTitle": "Добавить название события",
+        "dateTitle": "Выбрать дату",
+        "desTitle": "Добавить описание",
+        "locTitle": "Место события",
+        "participantsTitle": "Добавить участников",
+        "posterTitle": "Добавить фото",
+        "buttonText": "Создать событие",
+        "premiumLabel": "Премиум",
+        "error": "Поле обязательное для заполнения"
+    },
+    "deleteEvent": {
+        "deleteEventTittle": "Удалить событие",
+        "deleteEventButton": "Удалить событие"
+    },
+    "delatePlace": {
+        "caption": "Список мест"
+    },
+    "editEvent": {
+        "editEventTittle": "Редактировать событие",
+        "placeholder": {
+            "eventName": "Название события",
+            "datePicker": "Дата события",
+            "eventDescription": "Описание события",
+            "selectPlace": "Выбрать место",
+            "selectArtists": "Выбрать участников"
+        },
+        "buttonAddPhoto": "Выбрать",
+        "eventTitle": "Добавить название события",
+        "dateTitle": "Выбрать дату",
+        "desTitle": "Редактировать описание",
+        "locTitle": "Место события",
+        "participantsTitle": "Добавить участников",
+        "posterTitle": "Добавить фото",
+        "buttonText": "Редактировать",
+        "premiumLabel": "Премиум",
+        "error": "Поле обязательное для заполнения"
+    },
+    "eventListEdit": {
+        "eventListEditTittle": "Редактировать событие",
+        "placeholder": {
+            "selectPlace": "Выбрать место"
+        }
+    },
+    "addPlace": {
+        "addPlaceTittle": "Добавить место",
+        "label": {
+            "name": "Имя",
+            "location": "Локация",
+            "phoneNumber": "Номер телефона",
+            "capacity": "Количество"
+        },
+        "placeholder": {
+            "name": "Имя",
+            "location": "Локация",
+            "phoneNumber": "Номер телефона",
+            "placeCapacity": "Количество мест"
+        },
+        "buttonAdd": "Добавить",
+        "buttonMap": "Карта"
+    },
+    "adminPanel": {
+        "menu": {
+            "addNewEven": "Добавить новое событие",
+            "addNewPlace": "Добавить новое место",
+            "addNewManagers": "Добавить новых менеджеров",
+            "changeEvent": "Редактировать событие",
+            "deleteEvent": "Удалить событие",
+            "deletePlace": "Удалить место"
+        }
+    },
+    "allEvents": {
+        "loadMore": "Показать еще",
+        "back": "Назад ко всем событиям"
+    },
+    "barsList": {},
+    "eventDetails": {
+        "artists": "Участники",
+        "register": "Зарегистрироваться",
+        "ifRegistered": "Вы уже зарегистрированы на это событие!",
+        "evntTitleLinkTo": "ссылка на",
+        "eventTitleWeb": "facebook"
+    },
+    "footer": {
+        "map": "Карта",
+        "contact": "Контакты",
+        "support": "Поддержка",
+        "home": "Главная",
+        "allEvents": "Все события",
+        "upcomingEvents": "Ближайшие события",
+        "bars": "Бары",
+        "address": {
+            "city": "Черновцы",
+            "street": "ул. Головна"
+        },
+        "helpInfo": "Просто пришлите нам свои вопросы, и мы предоставим вам необходимую помощь."
+    },
+    "forms": {},
+    "header": {
+        "menuItemHome": "Главная",
+        "menuItemEvents": "События",
+        "menuItemBars": "Бары",
+        "menuItemSupport": "Поддержка",
+        "menuItemAllEvents": "Все события",
+        "search": {
+            "chooseEventName": "Выбрать название события",
+            "chooseDates": "Выбрать дату",
+            "chooseBars": "Выбрать бары",
+            "buttonSelectAll": "Выбрать все",
+            "buttonSearch": "Поиск",
+            "clearAll": "Очистить все поля"
+        },
+        "placeholder": {
+            "eventName": "Введите название события",
+            "dates": "Выберите дату",
+            "barsOrBarName": "Выберите бар или введите название бара"
+        }
+    },
+    "homePage": {},
+    "lastEvents": {
+        "buttonAllEvents": "Все события"
+    },
+    "placeDetails": {},
+    "premiumEvents": {
+        "buttonMore": "ЕЩЕ"
+    },
+    "userProfile": {
+        "invalidUserName": "Неверное имя или логин",
+        "invalidPhone": "Неверный номер телефона",
+        "buttonEdit": "Редактировать",
+        "upcomingEvents": "Ваши ближайшие события",
+        "eventDetails": "подробнее"
+    },
+    "userSignIn": {
+        "signIn": "Войти",
+        "invalidEmail": "Неверная почта",
+        "invalidPassword": "Неверный пароль",
+        "register": "Зарегистрироваться",
+        "forgotPassword": "Забыли пароль?",
+        "buttonSignIn": "Войти",
+        "placeholder": {
+            "enterEmail": "Введите адрес электронной почты",
+            "enterPassword": "Введите пароль"
+        }
+    },
+    "userRegistration": {
+        "register": "Зарегистрироваться",
+        "invalidUserName": "Неверный логин",
+        "submit": "Отправить",
+        "signIn": "Войти",
+        "placeholder": {
+            "username": "Логин",
+            "email": "Почта",
+            "phone": "Телефон",
+            "password": "Пароль",
+            "confirmPassword": "Подтвердить пароль"
+        }
+    },
+    "resetPassword": {
+        "enterNewPassword": "Введите новый пароль!",
+        "reset": "Сброс",
+        "placeholder": {
+            "newPassword": "Пароль",
+            "confirmNewPassword": "Подтвердите пароль"
+        }
+    },
+    "forgotPassword": {
+        "forgotPass": "Забыли пароль?",
+        "invalidEmail": "Неверная почта",
+        "resetPassword": "Восстановить пароль",
+        "buttonBack": "Назад",
+        "placeholder": {
+            "enterYourEmail": "Введите Вашу почту"
+        }
+    },
+    "sidebarAdmin": {
+        "addEvent": "Add Event"
+    },
+    "alertMessages": {
+        "signIn": "Добро пожаловать!",
+        "registerOnEvent": "Спасибо за регистрацию!",
+        "addManager": "Менеджер был добавлен успешно!",
+        "changePersonalInfo": "Ваше имя и номер телефона были изменены успешно!",
+        "unsubscribeFromEvent": "Вы успешно отписались!",
+        "errorMessage": "Извините, что-то пошло не так!",
+        "userRegistration": "Ваш аккаунт успешно создан. Пожалуйста, проверьте свою электронную почту, чтобы активировать учетную запись",
+        "verified": "Ваша учетная запись была успешно подтверждена!",
+        "forgotPass": "Проверьте свою почту для следующих инструкций",
+        "resetPass": "Ваш пароль был успешно изменен!"
+    },
+    "momentLocalizateDate": "ru"
+}

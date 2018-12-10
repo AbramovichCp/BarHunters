@@ -1,0 +1,183 @@
+<form 
+    class='form formStyle'
+    name='form'
+    #eventData="ngForm"
+    (ngSubmit)="createNewEvent(eventData, eventPlace)"
+>
+
+    <span>
+        {{'addEvent.createNewEvent' | translate}}
+    </span>
+
+    <div class="row form-group common">
+        <label for="eventName">
+            {{'addEvent.eventTitle' | translate}}
+        </label>
+        <input
+            type="text"
+            class="form-control event-icon input-field"
+            id="eventName"
+            placeholder="{{'addEvent.placeholder.eventName' | translate}}" 
+            name='eventName'
+            ngModel 
+            required 
+            #eventName="ngModel"
+        >
+        <div
+            *ngIf="eventName.invalid && (eventName.dirty || eventName.touched)"
+            class="errorMessage"
+        >
+            <div *ngIf="eventName.errors.required">
+                {{'addEvent.error' | translate}}
+            </div>
+        </div>
+    </div>
+    <div class="form-group dataPicker common">
+        <label for="date">
+            {{'addEvent.dateTitle' | translate}}
+        </label>
+        <input 
+            type="text"
+            placeholder="{{'addEvent.placeholder.datePicker' | translate}}"
+            class="form-control date-icon datepicker input-field"
+            bsDatepicker
+            [minDate]="minDate"
+            [maxDate]="maxDate"
+            id="date"
+            name='dataPicker'
+            ngModel
+            #datePicker="ngModel"
+            required
+        >
+        <div 
+            *ngIf="datePicker.invalid && (datePicker.dirty || datePicker.touched)"
+            class="errorMessage"
+        >
+            <div *ngIf="datePicker.errors.required">
+                {{'addEvent.error' | translate}}
+            </div>
+        </div>
+    </div>
+    <div class="row form-group timePicker common">
+        <timepicker 
+            [(ngModel)]="timePicker"
+            class="time-picker"
+            [showMeridian]="true"
+            [showSpinners]="false"
+            [ngModelOptions]="{standalone: true}"
+        >
+        </timepicker>
+    </div>
+    <div class="form-group common">
+        <label for="eventDes">
+              {{'addEvent.desTitle' | translate}}
+        </label>
+        <input 
+            type="text"
+            class="form-control input-field description-icon"
+            id="eventDes"
+            placeholder="{{'addEvent.placeholder.eventDescription' | translate}}"
+            name='description'
+            ngModel
+            #des="ngModel"
+            required
+        >
+        <div 
+            *ngIf="des.invalid && (des.dirty || des.touched)"
+            class="errorMessage"
+        >
+            <div *ngIf="des.errors.required">
+                {{'addEvent.error' | translate}}
+            </div>
+        </div>
+    </div>
+
+    <label class="select-label">{{'addEvent.locTitle' | translate}}</label>
+    <ng-select 
+        [items]="placesArray"
+        bindLabel="place_name"
+        bindValue="place_id"
+        placeholder="{{'addEvent.placeholder.selectPlace' | translate}}"
+        [(ngModel)]="selectedPlace"
+        [ngModelOptions]="{standalone: true}"
+        class="common input-"
+        name='location'
+        ngModel
+        #eventPlace="ngModel"
+        required
+        [ngModelOptions]="{updateOn: 'blur'}"
+    >
+    </ng-select>
+    <div 
+        *ngIf="eventPlace.invalid && (eventPlace.dirty || eventPlace.touched)"
+        class="errorMessage"
+    >
+        <div *ngIf="eventPlace.errors.required">
+            {{'addEvent.error' | translate}}
+        </div>
+    </div>
+    <label class="select-label">{{'addEvent.participantsTitle' | translate}}</label>
+    <ng-select 
+        [items]="artistsArray" 
+        bindLabel="artist_name"
+        placeholder="{{'addEvent.placeholder.selectArtists' | translate}}"
+        [(ngModel)]="selectedArtists"
+        bindValue="artist_id"
+        [multiple]="true"
+        [ngModelOptions]="{standalone: true}"
+        [closeOnSelect]="false"
+        class="artistsSelect common input-field"
+        name='artists'
+        ngModel
+    >
+        <ng-template 
+            ng-option-tmp
+            let-item="item"
+            let-item$="item$"
+            let-index="index"
+        >
+            <input 
+                id="item-{{index}}"
+                type="checkbox"
+                [ngModel]="item$.selected"
+                [ngModelOptions]="{standalone: true}"
+            />
+             {{item.artist_name}}
+        </ng-template>
+    </ng-select>
+    <div class="form-check premium">
+        <input 
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="premium"
+            [(ngModel)]='premium'
+            [ngModelOptions]="{standalone: true}"
+        >
+        <label class="form-check-label" for="premium">
+            {{'addEvent.premiumLabel' | translate}}
+        
+        </label>
+    </div>
+    <div class="file_upload common">
+        <button type="button" class="custom-button">
+            {{'addEvent.buttonAddPhoto' | translate}}
+        </button>
+        <div>{{imageStatus}}</div>
+        <input 
+            type="file"
+            class="form-control-file input-field form-control-sm common cust imageUpload"
+            id="imageEditEvent"
+            required
+            name='poster'
+            ngModel
+            (change)="imageChangeUploaded($event)"
+        >
+    </div>
+    <button 
+        class="btn  submit-form custom-button"
+        [disabled]="eventData.invalid || eventPlace.invalid"
+    >
+        {{'addEvent.buttonText' | translate}}
+  </button>
+</form>

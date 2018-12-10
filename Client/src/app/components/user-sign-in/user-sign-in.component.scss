@@ -1,0 +1,83 @@
+
+@import '../../../common/variable.scss';
+@import '../../../common/mixin.scss';
+
+.container-fluid {
+  background: url('../../../assets/2.jpg');
+  background-size: cover;
+}
+
+.row {
+ @include flex-row(center, center);
+ height: 100vh;
+}
+
+.form-container {
+  box-shadow: 0 0 40px 10px rgb(80, 79, 79);
+  border-radius: 5px;
+  background: linear-gradient(0deg, #2e2d2d 0%, #2e2c2c 100%);
+
+  input {
+    background: #afb1be;
+  }
+  .submit-btn {  
+    display: block;
+    margin: auto;
+    padding: 10px 50px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: .9rem;
+    transition: .3s;
+    margin-bottom: 10px;
+    box-shadow: $btn-color 4px;
+    background-color: rgb(221, 98, 98);
+    &:disabled {
+      color: #444;
+    }
+    // &:hover {
+    //   background: #DC6180;
+    //   color: #fff;
+    // }
+    @include submit-btn();
+    @media screen and (max-width: 575px) { 
+      margin-top: 8%;
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    height: 100%;
+    background: rgba(46, 45, 45, .6);
+    .heading {
+      padding-top: 45%;
+    }
+    input {
+      margin-bottom: 10%; 
+    }
+    .router-link {
+      padding-top: 10%;
+    }
+  }
+
+}
+
+.heading {
+  color: rgb(211, 211, 211);
+  text-align: center;
+  font-size: 2rem;
+}
+
+.hasError {
+  color: rgb(221, 98, 98);
+}
+
+.router-link {
+  display: inline-block;
+  color: rgb(211, 211, 211);
+  font-size: 1.2rem;
+  width: 50%;
+  text-align: left;
+}
+
+.forgot-pw-link {
+  text-align: right;
+}

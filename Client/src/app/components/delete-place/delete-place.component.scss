@@ -1,0 +1,42 @@
+.container-fluid{
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  .caption{
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+  }
+  .list-places{
+    .place{
+      margin-top: 3%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #777;
+      .place__name{
+        font-size: 1.7em;
+      }
+      .place__deleteBtn{
+        cursor: pointer;
+        img{
+          height: 1.9em ;
+          color: #fff;
+          transition: color 0.3s ease-in-out;
+        }
+        &:hover>img{
+          height: 1.9em;
+        }
+      }
+    } 
+  }
+}
+@keyframes deleteButton {
+  0%{
+    color: #fff;
+  }
+  100%{
+    color: #B3474A;
+  }
+}

@@ -1,0 +1,178 @@
+@mixin image-in-block() {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+@mixin center-in-block{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin flex-block($direction, $content, $items) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $content;
+	align-items: $items;
+}
+
+@mixin flex-row($a, $b) {
+	display: flex;
+	flex-direction: row;
+	justify-content: $a;
+	align-items: $b;
+}
+
+@mixin title-main($color-text, $color-shadow){
+	text-align: center;
+	text-transform: capitalize;
+	font-family: 'Yesteryear', cursive;
+	text-shadow: 0px 0px 50px $color-shadow;
+	color: $color-text;
+	font-size: 6rem;
+}
+
+@mixin btn-slider-prev($color) {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 80px;
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		background: $color;
+		width: 58px;
+		height: 4px;
+	}
+	& {
+		left: -60px;
+		&::before {
+			top: 0%;
+			left: 100%;
+			transform-origin: left;
+			transform: rotate(-225deg);
+		}
+		&::after {
+			top: 100%;
+			left: 100%;
+			transform-origin: left;
+			transform: rotate(225deg);
+		}
+	}
+	&:hover {
+		transform: translateY(-50%) scale(1.1);
+	}
+	&:active {
+		transform: translateY(-50%) translateX(-5px) scale(1);
+	}
+}
+
+@mixin btn-slider-next($color) {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 40px;
+	height: 80px;
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		background: $color;
+		width: 58px;
+		height: 4px;
+	}
+	& {
+		right: -60px;
+		&::before {
+			top: 0%;
+			right: 100%;
+			transform-origin: right;
+			transform: rotate(225deg);
+		}
+		&::after {
+			top: 100%;
+			right: 100%;
+			transform-origin: right;
+			transform: rotate(-225deg);
+		}
+	}
+	&:hover {
+		transform: translateY(-50%) scale(1.1);
+	}
+	&:active {
+		transform: translateY(-50%) translateX(5px) scale(1);
+	}
+}
+
+@mixin form-input {
+	border: 1px solid $form-border-color;
+	background-color: $form-background-color;
+}
+
+@mixin form-field($a, $b) {
+	color: $a;
+	background-color: $b;
+}
+
+@mixin clear-form($a, $b, $c) {
+	top: $a;
+	right: $b;
+	bottom: $c;
+	position: absolute;
+	height: .7rem;
+	margin: auto;
+	font-size: .7rem;
+	cursor: pointer;
+	color: #999;
+}
+
+@mixin submit-btn() { 
+  display: block;
+  margin: auto;
+  border-radius: 50px;
+  background: transparent;
+  padding: 10px 50px;
+  border: 2px solid rgb(211, 211, 211);
+  color: rgb(211, 211, 211);
+  text-transform: uppercase;
+  font-size: .9rem;
+  transition: .3s;
+  margin-bottom: 10px;
+  box-shadow: $btn-color 4px;
+  &:disabled {
+    opacity: 0.3;
+  }
+  &:hover:disabled {
+    background: transparent;
+    color: rgb(211, 211, 211);
+  }
+  &:hover {
+    background: rgb(211, 211, 211);
+    color: black;
+  }
+}
+
+@mixin common-profile-field() {
+  display: block;
+  background: transparent;
+  border: none;
+  margin: auto;
+  outline: none;
+  text-align: center;
+}
+
+@mixin profile-icons() {
+  z-index: 900;
+  display: block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  outline: none;
+  transition: .3s;
+}

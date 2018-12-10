@@ -1,0 +1,150 @@
+<div *ngIf="isAuth" class="container-fluid main-container">
+    <div class="row user-info-wrapper">
+        <div class="header">
+
+          <img 
+            routerLink="/BarsHunters/admin-panel" 
+            src="../../../assets/user-profile/admin.png" 
+            alt="admin" 
+            [ngClass]="{
+            'admin-link': true,
+            'admin-link-active': isActiveSettings
+            }" 
+            [ngStyle]="{'visibility': isAdmin ? 'visible' : 'hidden'}">
+
+          <img 
+            (click)="toggleSettings()" 
+            [ngClass]="{
+              'settings': true,
+              'settings-active': isActiveSettings
+              }" 
+            src="../../../assets/user-profile/settings.png" 
+            alt="settings">
+
+          <div 
+            class="disable-settings" 
+            [ngStyle]="{'z-index': !edit ? '200': '-100'}"></div>
+
+          <img [ngClass]="{
+            'logout-link': true,
+            'logout-link-active': isActiveSettings
+            }" 
+            (click)="logout()" 
+            src="../../../assets/user-profile/logout.png" 
+            alt="logout">
+            
+        </div>
+
+        <div class="personal-info w-100">
+
+        <form 
+          [formGroup]="personalInfoForm" 
+          #formDirective="ngForm" 
+          (ngSubmit)="submit(personalInfoForm, formDirective)" 
+          novalidate 
+          class="edit-profile-form">
+
+                <!-- need to add [disabled]="!personalInfoForm.valid" -->
+          <button 
+            [ngClass]="{
+            'edit-info-btn': true
+            }" 
+            type="submit" 
+            [ngStyle]="{'visibility': !edit ? 'visible' : 'hidden'}">
+            <img class="submit-img" 
+              src="../../../assets/user-profile/submit.png" 
+              alt="submit">
+          </button>
+
+          <img 
+            [ngClass]="{
+            'edit-profile': true,
+            'edit-profile-active': isActiveSettings
+            }" 
+            [ngStyle]="{
+              'visibility': edit ? 'visible': 'hidden',
+              'transition': edit ? '.3s': '0s'  
+            }" 
+            src="../../../assets/user-profile/edit-profile.png"
+            (click)="focusOn()" 
+            alt="edit">
+
+            <img 
+              src="../../../assets/user-profile/cancel.png" 
+              alt="cancel" 
+              [ngClass]="{
+                'cancel-edit': true
+                }" 
+              (click)="focusOut()" 
+              [ngStyle]="{'visibility': !edit ? 'visible' : 'hidden'}">
+
+            <div class="form-group">
+
+              <input 
+                #userName 
+                formControlName="username" 
+                [ngClass]="{
+                  'user-name': true,
+                  'active-form-field': !edit
+                  }" [value]="personalInfo.user_name" [readonly]="edit">
+
+            </div>
+
+            <div class="form-group">
+
+              <input 
+                #userPhone 
+                formControlName="phone" 
+                [ngClass]="{
+                  'user-phone': true,
+                  'active-form-field': !edit
+                  }" 
+                [value]="personalInfo.user_phone" 
+                [readonly]="edit">
+
+            </div>
+        </form>
+
+        <span class="user-email">
+          {{personalInfo.user_email}}
+        </span>
+
+        <span class="upcoming-events">
+          {{'userProfile.upcomingEvents' | translate}}
+        </span>
+
+        </div>
+
+    </div>
+
+    <div class="my-event" *ngFor="let event of events">
+      <div class="my-event-cover"></div>
+
+      <div 
+        class="event-image" 
+        [ngStyle]="{
+          'background-image':
+          'linear-gradient(rgba(33, 33, 33, 0.3), rgba(33, 33, 33, 0.3) ),url(' +
+          event.event_poster +
+          ')'}"></div>
+
+      <div class="my-event-info-wrapper ">
+        <span class="profile-event-date">{{ event.event_date | localizeEventsDates | uppercase }}</span>
+        <span class="profile-event-name">{{event.event_title}}</span>
+
+        <span class="profile-place-name">{{event.place_id[0].place_name}}</span>
+        <span class="profile-place-address">{{event.place_id[0].place_address}}</span>
+
+        <img 
+          class="unsubscribe" 
+          (click)="unsubscribeFromEvent(event.event_id)" 
+          src="../../../assets/user-profile/unsubscribe.png" 
+          alt="unsubscribe">
+        <div 
+          class="profile-read-more" 
+          (click)="userEventsDetails(event.event_id)">{{'userProfile.eventDetails' | translate}}</div>
+      </div>
+
+    </div>
+  
+</div>

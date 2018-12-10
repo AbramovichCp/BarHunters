@@ -1,0 +1,222 @@
+{
+    "addManager": {
+        "addManagerTittle": "Додати менеджера",
+        "label": {
+            "name": "Ім'я",
+            "choosePlaces": "Обрати місце",
+            "phoneNumber": "Номер телефону",
+            "emailAddress": "Пошта",
+            "password": "Пароль",
+            "confirmPassword": "Підтвердити пароль"
+        },
+
+        "placeholder": {
+            "name": "Ім'я",
+            "number": "Номер",
+            "enterEmail": "Введіть пошту",
+            "password": "Пароль",
+            "confirmPassword": "Підтвердити пароль"
+        },
+        "buttonSubmit": "Додати"
+    },
+    "addEvent": {
+        "createNewEvent": "Додати подію",
+        "placeholder": {
+            "eventName": "Назва події",
+            "datePicker": "Дата події",
+            "eventDescription": "Опис події",
+            "selectPlace": "Обрати місце",
+            "selectArtists": "Обрати учасників"
+        },
+        "buttonAddPhoto": "Додати фото",
+        "eventTitle": "Додати назву події",
+        "dateTitle": "Обрати дату",
+        "desTitle": "Додати опис",
+        "locTitle": "Місце події",
+        "participantsTitle": "Додати учасників",
+        "posterTitle": "Додати фото",
+        "buttonText": "Створити подію",
+        "premiumLabel": "Преміум",
+        "error": "Поле обов'язкове до заповнення"
+    },
+    "deleteEvent": {
+        "deleteEventTittle": "Видалити подію",
+        "deleteEventButton": "Видалити подію"
+    },
+    "delatePlace": {
+        "caption": "Список місць"
+    },
+    "editEvent": {
+        "editEventTittle": "Редагувати подію",
+        "placeholder": {
+            "eventName": "Назва події",
+            "datePicker": "Дата події",
+            "eventDescription": "Опис події",
+            "selectPlace": "Обрати місце",
+            "selectArtists": "Обрати учасників"
+        },
+        "buttonAddPhoto": "Додати",
+        "eventTitle": "Редагувати назву події",
+        "dateTitle": "Обрати дату",
+        "desTitle": "Редагувати опис",
+        "locTitle": "Місце події",
+        "participantsTitle": "Додати учасників",
+        "posterTitle": "Додати фото",
+        "buttonText": "Редагувати",
+        "premiumLabel": "Преміум",
+        "error": "Поле обов'язкове до заповнення"
+    },
+    "eventListEdit": {
+        "eventListEditTittle": "Редагувати подію",
+        "placeholder": {
+            "selectPlace": "Обрати місце"
+        }
+    },
+    "addPlace": {
+        "addPlaceTittle": "Додати місце",
+        "label": {
+            "name": "Ім'я",
+            "location": "Локація",
+            "phoneNumber": "Номер телефону",
+            "capacity": "Кількість"
+        },
+        "placeholder": {
+            "name": "Ім'я",
+            "location": "Локація",
+            "phoneNumber": "Номер телефону",
+            "placeCapacity": "Кількість місць"
+        },
+        "buttonAdd": "Додати",
+        "buttonMap": "Карта"
+    },
+    "adminPanel": {
+        "menu": {
+            "addNewEven": "Додати нову подію",
+            "addNewPlace": "Додати нове місце",
+            "addNewManagers": "Додати нових менеджерів",
+            "changeEvent": "Редагувати подію",
+            "deleteEvent": "Видалити подію",
+            "deletePlace": "Видалити місце"
+        }
+    },
+    "allEvents": {
+        "loadMore": "Показати більше",
+        "back": "Назад до усіх подій"
+    },
+    "barsList": {},
+    "eventDetails": {
+        "artists": "Учасники",
+        "register": "Зареєструватися",
+        "ifRegistered": "Ви вже зареєстровані на цю подію!",
+        "evntTitleLinkTo": "посилання на",
+        "eventTitleWeb": "facebook"
+    },
+    "footer": {
+        "map": "Карта",
+        "contact": "Контакти",
+        "support": "Підтримка",
+        "home": "Головна",
+        "allEvents": "Усі події",
+        "upcomingEvents": "Найближчі події",
+        "bars": "Бари",
+        "address": {
+            "city": "Чернівці",
+            "street": "вул. Головна"
+        },
+        "helpInfo": "Просто надішліть нам свої запитання, і ми надамо вам потрібну допомогу."
+    },
+    "forms": {},
+    "header": {
+        "menuItemHome": "Головна",
+        "menuItemEvents": "Події",
+        "menuItemBars": "Бари",
+        "menuItemSupport": "Підтримка",
+        "menuItemAllEvents": "Усі події",
+        "search": {
+            "chooseEventName": "Обрати назву події",
+            "chooseDates": "Обрати дати",
+            "chooseBars": "Обрати бари",
+            "buttonSelectAll": "Обрати усі",
+            "buttonSearch": "Пошук",
+            "clearAll": "Очистити всі поля"
+        },
+        "placeholder": {
+            "eventName": "Введіть назву події",
+            "dates": "Оберіть дати",
+            "barsOrBarName": "Оберіть бари або введіть назву бару"
+        }
+    },
+    "homePage": {},
+    "lastEvents": {
+        "buttonAllEvents": "Усі події"
+    },
+    "placeDetails": {},
+    "premiumEvents": {
+        "buttonMore": "БІЛЬШЕ"
+    },
+    "userProfile": {
+        "invalidUserName": "Невірне ім'я чи логін",
+        "invalidPhone": "Невірний номер телефону",
+        "buttonEdit": "Редагувати",
+        "upcomingEvents": "Ваші найближчі події",
+        "eventDetails": "детальніше"
+    },
+    "userSignIn": {
+        "signIn": "Увійти",
+        "invalidEmail": "Невірна пошта",
+        "invalidPassword": "Невірний пароль",
+        "register": "Зареєструватися",
+        "forgotPassword": "Забули пароль?",
+        "buttonSignIn": "Увійти",
+        "placeholder": {
+            "enterEmail": "Введіть адресу електронної пошти",
+            "enterPassword": "Введіть пароль"
+        }
+    },
+    "userRegistration": {
+        "register": "Зареєструватися",
+        "invalidUserName": "Невірний логін",
+        "submit": "Відправити",
+        "signIn": "Увійти",
+        "placeholder": {
+            "username": "Логін",
+            "email": "Пошта",
+            "phone": "Телефон",
+            "password": "Пароль",
+            "confirmPassword": "Підтвердіть пароль"
+        }
+    },
+    "resetPassword": {
+        "enterNewPassword": "Введіть новий пароль!",
+        "reset": "Скинути",
+        "placeholder": {
+            "newPassword": "Пароль",
+            "confirmNewPassword": "Підтвердіть пароль"
+        }
+    },
+    "forgotPassword": {
+        "forgotPass": "Забули пароль?",
+        "invalidEmail": "Невірна пошта",
+        "resetPassword": "Відновити пароль",
+        "buttonBack": "Назад",
+        "placeholder": {
+            "enterYourEmail": "Введіть Вашу пошту"
+        }
+    },
+    "sidebarAdmin": {
+        "addEvent": "Додати подію"
+    },
+    "alertMessages": {
+        "signIn": "Вітаю!",
+        "registerOnEvent": "Дякуємо за реєстрацію!",
+        "addManager": "Менеджера було додано успішно!",
+        "changePersonalInfo": "Ваші ім'я та номер телефону були відредаговані успішно!",
+        "unsubscribeFromEvent": "Ви успішно відписалися!",
+        "errorMessage": "Вибачте, щось пішло не так!",
+        "userRegistration": "Ваш обліковий запис успішно створено. Будь ласка, перевірте свою електронну пошту, щоб активувати обліковий запис",
+        "verified": "Ваш обліковий запис успішно підтверджено!",
+        "forgotPass": "Перевірте свою пошту для наступних інструкцій",
+        "resetPass": "Ваш пароль успішно змінено!"
+    },
+    "momentLocalizateDate": "uk"
+}

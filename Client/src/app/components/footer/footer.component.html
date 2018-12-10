@@ -1,0 +1,56 @@
+<footer class="container-fluid footer">
+	<div class="col-10 offset-1">
+		<div class="row justify-content-around align-items-start footer-items">
+			<div class="col-12 col-sm-8 col-md-6 col-lg-4  align-items-center footer-list">
+				<h4>{{'footer.map' | translate}}</h4>
+				<ul>
+					<li class="footer-item">
+						<span [routerLink]="['.']" fragment="home" (click)="scrollToBottom('home')">
+							{{'footer.home'| translate}}
+						</span>
+					</li>
+					<li class="footer-item">
+						<span [routerLink]="['/BarsHunters/all-events']">
+							{{'footer.allEvents' |translate}}
+						</span>
+					</li>
+					<li class="footer-item">
+						<span [routerLink]="['.']" fragment="events" (click)="scrollToBottom('events')">
+							{{'footer.upcomingEvents'| translate}}
+						</span>
+					</li>
+					<li class="footer-item">
+						<span [routerLink]="['.']" fragment="bars" (click)="scrollToBottom('bars')">
+							{{'footer.bars' | translate}}
+						</span>
+					</li>
+				</ul>
+			</div>
+			<div class="col-12 col-sm-8 col-md-6 col-lg-4 footer-list">
+				<h4>{{'footer.contact' | translate}}</h4>
+				<ul>
+					<li class="footer-item">
+						<a href="tel:+380955438760">
+							<i class="fas fa-phone"></i> <span>+380955438760</span>
+						</a>
+					</li>
+					<li class="footer-item">
+						<i class="fas fa-envelope"></i>
+						<span>bh.admin@gmail.com</span>
+					</li>
+					<li class="footer-item">
+						<i class="fas fa-home"></i>
+						<span>{{'footer.address.city' | translate}}, {{'footer.address.street' | translate}}, 230,
+							58000</span>
+					</li>
+				</ul>
+			</div>
+			<div class="col-12 col-sm-8 col-md-6 col-lg-4 footer-list">
+				<h4>{{'footer.support' | translate}}</h4>
+				<p>
+					{{'footer.helpInfo' | translate}}
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,100 @@
+@import '../../../common/variable.scss';
+@import '../../../common/mixin.scss';
+
+.carousel{
+  width: 75vw;
+  height: 550px;
+  margin: 0 0 30px 0;
+}
+
+.bar-slider-item{
+  margin: 70px 0;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  outline: 0;
+  transition: 1s;
+}
+
+.title-categories{
+  @include title-main($title-first-color, $brown);
+  text-shadow: 1px 1px 5px #333;
+}
+
+.bar-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bar-card{
+  border-radius: $border-radius-card;
+  padding: 10px 20px;
+  position: relative;
+  @include image-in-block();
+  height: 450px;
+  width: 85%;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.6);
+  transition: 3s;  
+}
+
+.bar-caption{
+  color: rgba($color: $white, $alpha: .75);
+  position: absolute;
+  transform: translateY(20px) rotate(-90deg);
+  transform-origin: top left;
+  top: 100%;
+  left: -50px;
+  width: 450px;
+  font-weight: 700;
+  transition: 1s;
+  font-size: 5.8em;
+}
+
+.slider{
+  position: relative;
+  .btn1-prev{
+    @include btn-slider-prev(#bbb);
+    opacity: .4;
+    transition: .3s;
+  }
+  .btn1-next{
+    @include btn-slider-next(#bbb);
+    opacity: .4;
+    transition: .3s;
+  }
+}
+
+@media screen and (min-width: 320px){
+  .title-categories{
+    font-size: 3rem;
+  }
+  .bar-caption{
+    font-size: 5em;
+  }
+}
+
+@media screen and (min-width: 576px){
+  .title-categories{
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 991px){
+  .title-categories{
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .slider .btn1-prev,
+  .slider .btn1-next,{
+    visibility: hidden;
+    left: 50%;
+  }
+  .carousel{
+    width: 95vw;
+  }
+}

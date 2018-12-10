@@ -1,0 +1,42 @@
+$font-stack:    Helvetica, sans-serif;
+$button-color:  rgba(252, 104, 102,1);
+$white-color: rgba(255, 255, 255, 1);
+$back-hover: rgba(235, 245, 255, 1);
+$fs: 14px;
+
+.title {
+    font-family: $font-stack;
+    font-weight: 700;
+    right: 0;
+    margin-left: 35%;
+    top: 10px;
+    color: $button-color;
+    font-size: 18px;
+  }
+  
+.eventsLists {color: black;
+    padding: 10px;
+    margin: 20px;
+    width: 300px;
+    height: 200px;
+    background: #444;
+    display: block;
+    color: #fff;
+    .event {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      border-bottom: 1px solid #eeeeee;
+    }
+    .event:hover {
+      background:$back-hover;
+      color: #222;
+    }
+    
+    .listContainer {
+      height: 0;
+      overflow: scroll;
+      overflow-x:hidden;
+    }
+  }

@@ -1,0 +1,35 @@
+<div>
+  <div class="form-group">
+    <label class="search-label">{{'header.search.chooseEventName' | translate}}</label>
+    <input class="search-input" type="text" id="eventName" placeholder="{{'header.placeholder.eventName' | translate}}"
+      [(ngModel)]="searchEventName" [ngModelOptions]="{standalone: true}" (keydown)="keyDownFunction($event)" #reference/>
+    <span *ngIf="reference.value" (click)="searchEventName=''" class="clear-form-name"><i class="fas fa-times"></i></span>
+  </div>
+  <div class="form-group">
+    <label class="search-label">{{'header.search.chooseDates' | translate}}</label>
+    <input class="search-input" id="eventDate" placeholder="{{'header.placeholder.dates' | translate}}" [bsValue]="bsValue"
+      placement="left" bsDaterangepicker #drp="bsDaterangepicker" [(ngModel)]="dateRangeValue" [ngModelOptions]="{standalone: true}"
+      [bsConfig]="dpConfig" (keydown)="keyDownFunction($event)" #ref>
+      <span *ngIf="ref.value" (click)="dateRangeValue=''" class="clear-form-date"><i class="fas fa-times"></i></span>
+  </div>
+  <label class="search-label">{{'header.search.chooseBars' | translate}}</label>
+  <ng-select class="multi-select" [items]="places" placeholder="{{'header.placeholder.barsOrBarName' | translate}}"
+    bindLabel="place_name" bindValue="place_id" [(ngModel)]="selectedPlacesIDs" [ngModelOptions]="{standalone: true}"
+    [multiple]="true" [closeOnSelect]="false" groupBy="place_type" [selectableGroup]="true" [selectableGroupAsModel]="false"
+    (keydown)="keyDownFunction($event)" #refref>
+    <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+      <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{'header.search.buttonSelectAll' |
+      translate}}
+    </ng-template>
+    <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+      <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" [ngModelOptions]="{standalone: true}" />
+        {{item.place_name}}
+    </ng-template>
+  </ng-select>
+  <p class="clear-form" *ngIf="ref.value && reference.value" (click)="dateRangeValue=''; searchEventName=''; selectedPlacesIDs=''">{{ 'header.search.clearAll' | translate}} 
+    <i class="fas fa-times clear-all" style="font-size: 10px;"></i>
+  </p>
+  <button type="submit" class="btn btn-search btn-block" (click)="search(); changeCollapse()" (keydown)="keyDownFunction($event)">
+    {{'header.search.buttonSearch' | translate}}
+  </button>
+</div>

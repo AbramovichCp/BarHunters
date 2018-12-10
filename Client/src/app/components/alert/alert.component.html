@@ -1,0 +1,40 @@
+<div class="custom_alert_wrapper" [@wrapperAn]="animationState">
+    <div class="custom_alert_wrapper" [ngSwitch]="type">
+        <ng-template ngSwitchCase="success">
+            <div class="alert-success">
+                <div class="custom_alert_wrapper_message" [@messageAn]="animationState">
+                    <div *ngIf="incomingData.messageIsTemplate else regularMessage">
+                        <ng-container *ngTemplateOutlet="incomingData.message"></ng-container>
+                    </div>
+                    <ng-template #regularMessage>
+                        <div [innerHTML]="incomingData.message"></div>
+                    </ng-template>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template ngSwitchCase="error">
+            <div class="alert-error">
+                <div class="custom_alert_wrapper_message" [@messageAn]="animationState">
+                    <div *ngIf="incomingData.messageIsTemplate else regularMessage">
+                        <ng-container *ngTemplateOutlet="incomingData.message"></ng-container>
+                    </div>
+                    <ng-template #regularMessage>
+                        <div [innerHTML]="incomingData.message"></div>
+                    </ng-template>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template ngSwitchCase="info">
+            <div class="alert-info">
+                <div class="custom_alert_wrapper_message" [@messageAn]="animationState">
+                    <div *ngIf="incomingData.messageIsTemplate else regularMessage">
+                        <ng-container *ngTemplateOutlet="incomingData.message"></ng-container>
+                    </div>
+                    <ng-template #regularMessage>
+                        <div [innerHTML]="incomingData.message"></div>
+                    </ng-template>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

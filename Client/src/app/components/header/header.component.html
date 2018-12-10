@@ -1,0 +1,96 @@
+<header class="container-fluid">
+    <div class="row align-items-center menu-container">
+        <div id="search" [class.search_active]="searchToggle" class="search-modal">
+            <div>
+                <app-search class="search-form"></app-search>
+            </div>
+        </div>
+        <div class="col-3 col-sm-2 col-xl-1 logo-container">
+            <div class="menu-btn-container">
+                <div class="menu-btn" (click)="toggleHandler('navToggle')" [class.menu-btn_active]="navToggle">
+                    <span class="icon-humburger"></span>
+                </div>
+            </div>
+            <img [routerLink]="['/BarsHunters/home-page']" class="logo" src="../../../assets/logo.png" alt="">
+            <div class="menu-mobile" [class.menu-mobile-active]="navToggle">
+                <img [routerLink]="['/BarsHunters/home-page']" class="logo-mobile" src="../../../assets/logo.png" alt="">
+                <nav class="nav-mobile">
+                    <ul class="menu-list-mobile">
+                        <li class="menu-item">
+                            <span [routerLink]="['/BarsHunters/home-page']" fragment="home" class="menu-anchor" (click)="toggleHandler('navToggle')" (click)="scrollToBottom('home')">
+                {{ 'header.menuItemHome' | translate }}
+              </span>
+                        </li>
+                        <li class="menu-item">
+                            <span [routerLink]="['/BarsHunters/home-page']" fragment="events" class="menu-anchor" (click)="toggleHandler('navToggle')" (click)="scrollToBottom('events')">
+                {{ 'header.menuItemEvents' | translate }}
+              </span>
+                        </li>
+                        <li class="menu-item">
+                            <span [routerLink]="['/BarsHunters/home-page']" fragment="bars" class="menu-anchor" (click)="toggleHandler('navToggle')" (click)="scrollToBottom('bars')">
+                {{ 'header.menuItemBars' | translate }}
+              </span>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="localization-container-mobile">
+                    <form class="localization-row">
+                        <input class="item-lang" name="lang-mob" type="radio" id="en-mob" (click)="setLanguage('en')" title="En" checked />
+                        <label class="btn-title" for="en-mob">EN</label>
+                        <input class="item-lang" name="lang-mob" type="radio" id="ua-mob" (click)="setLanguage('ua')" title="Ua" />
+                        <label class="btn-title" for="ua-mob">UA</label>
+                        <input class="item-lang" name="lang-mob" type="radio" id="ru-mob" (click)="setLanguage('ru')" title="Ru" />
+                        <label class="btn-title" for="ru-mob">RU</label>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-1 localization-container">
+            <form class="localization-row">
+                <input class="item-lang" name="lang" type="radio" id="en" (click)="setLanguage('en')" title="En" checked />
+                <label class="btn-title" for="en">EN</label>
+                <input class="item-lang" name="lang" type="radio" id="ua" (click)="setLanguage('ua')" title="Ua" />
+                <label class="btn-title" for="ua">UA</label>
+                <input class="item-lang" name="lang" type="radio" id="ru" (click)="setLanguage('ru')" title="Ru" />
+                <label class="btn-title" for="ru">RU</label>
+            </form>
+        </div>
+        <nav class="col-6 col-lg-5 offset-lg-2 offset-xl-4  menu">
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span [routerLink]="['/BarsHunters/home-page']" fragment="home" class="menu-anchor" (click)="scrollToBottom('home')">
+            {{ 'header.menuItemHome' | translate }}
+          </span>
+                </li>
+                <li class="menu-item">
+                    <span [routerLink]="['/BarsHunters/home-page']" fragment="events" class="menu-anchor" (click)="scrollToBottom('events')">
+            {{ 'header.menuItemEvents' | translate }}
+          </span>
+                </li>
+                <li class="menu-item">
+                    <span [routerLink]="['/BarsHunters/home-page']" fragment="bars" class="menu-anchor" (click)="scrollToBottom('bars')">
+            {{ 'header.menuItemBars' | translate }}
+          </span>
+                </li>
+
+                <li *ngIf="isAuth() ? false : true" class="menu-item">
+                  <span [routerLink]="['/BarsHunters/sign-in']" class="menu-anchor">
+                    SignIn
+                    </span>
+                </li>
+
+            </ul>
+        </nav>
+        <div class="col-6 offset-3 col-sm-5 offset-md-4 col-lg-2 col-xl-1 offset-sm-5 offset-lg-0 control-side">
+            <div class="search-container">
+                <span class="search" [class.search_active]="searchToggle" (click)="toggleHandler('searchToggle')"></span>
+            </div>
+            <div *ngIf="isAuth() ? true : false" class="account-icon" (click)="toggleHandler('accToggle')">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+        <div *ngIf="!hideProfile" class="acc-container" [class.acc_active]="accToggle">
+            <app-user-profile></app-user-profile>
+        </div>
+    </div>
+</header>

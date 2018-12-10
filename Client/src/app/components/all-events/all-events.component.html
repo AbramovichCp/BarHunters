@@ -1,0 +1,73 @@
+<div class="container-fluid page-wrapper" name="all-events">
+    <div class="container">
+        <h1 class="main-title" *ngIf="!searchResult">
+            Discover Events Happening in Local Bars
+        </h1>
+        <h2 class="main-title" *ngIf="searchResult">Check Out Search Results:</h2>
+        <h3 class="no-result" *ngIf="searchResultHeader && searchResult.length == 0">
+            No results match your search criteria
+        </h3>
+
+        <div class="row" *ngIf="searchResult">
+            <div class="all-events-deck">
+                <div class="card event-card" *ngFor="let event of eventsAll" [ngStyle]="{
+            'background-image': 'linear-gradient(rgba(139, 55, 18, 0.7), rgba(0, 0, 0, 0.8)), 
+            linear-gradient(rgba(110, 42, 12, 0.6), rgba(0, 0, 0, 0.6)), 
+            url(' + event.event_poster + ')' }" (click)="eventDetails(event.event_id)">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ event.event_title }}</h5>
+                        <p class="card-text">
+                            {{ event.event_date | localizeEventsDates | uppercase }}
+                        </p>
+                        <h5 class="card-title bar-name">
+                            {{ event.place_id[0].place_name }}
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="!searchResult">
+            <div *ngFor="let year of years; let i = index">
+                <h2 class="year">{{ years[i] }}</h2>
+                <div class="row">
+                    <div class="all-events-deck">
+                        <div class="card event-card" *ngFor="let event of (eventsAll | eventsFromYear: years[i])" [@loadMoreAnimation] [ngStyle]="{
+                'background-image':
+                  'linear-gradient(rgba(139, 55, 18, 0.7), rgba(0, 0, 0, 0.8)), 
+                linear-gradient(rgba(110, 42, 12, 0.6), rgba(0, 0, 0, 0.6)), 
+                url(' +
+                  event.event_poster +
+                  ')'
+              }" (click)="eventDetails(event.event_id)">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ event.event_title }}</h5>
+                                <p class="card-text">
+                                    {{ event.event_date | localizeEventsDates | uppercase }}
+                                </p>
+                                <h5 class="card-title bar-name">
+                                    {{ event.place_id[0].place_name }}
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-row" *ngIf="!searchResult">
+            <button class="btn-load-more btn" (click)="loadMore(); scrollToBottom('.to-bottom')" *ngIf="!hide">
+              {{'allEvents.loadMore' | translate}}
+            </button>
+            <button class="btn-to-top" (click)="smoothScrollToTop()" *ngIf="page > 1">
+              <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+        <div class="button-row">
+            <button class="btn btn-back" routerLink="/BarsHunters/all-events" *ngIf="searchResult">
+              {{'allEvents.back' | translate}}
+            </button>
+        </div>
+        <span class="to-bottom"></span>
+    </div>
+</div>
